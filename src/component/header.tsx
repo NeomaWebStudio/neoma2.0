@@ -4,7 +4,7 @@ import Spline from '@splinetool/react-spline';
 
 const Header = () => {
 	return (
-		<div className='flex flex-col h-screen relative  ml-[72px]'> {/* Загальний контейнер */}
+		<div className='flex flex-col h-screen relative'> {/* Загальний контейнер */}
 			<div className=''>
 				<Nav />
 			</div>
@@ -18,7 +18,7 @@ const Header = () => {
 						</div>
 				</div>
 				</div>
-				<div className='absolute z-10 w-[50%]	h-[570px] bottom-5 right-0  after:content-[""] after:absolute after:bottom-4 after:right-5 after:w-[138px] after:h-[45px] after:bg-[#05040D] '>
+				<div className='absolute z-10 w-[50%]	h-[570px] top-50 right-0  after:content-[""] after:absolute after:bottom-4 after:right-5 after:w-[138px] after:h-[45px] after:bg-[#05040D] '>
 					<Spline scene='https://prod.spline.design/iAnALJoO3-LokGfj/scene.splinecode' />
 				</div>
 		</div>

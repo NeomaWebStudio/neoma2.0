@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Kurale, Geist_Mono } from "next/font/google";
+import { Kurale, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
 
 const kurale = Kurale({
@@ -11,6 +11,11 @@ const kurale = Kurale({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const nunito = Nunito({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-nunito",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kurale} ${geistMono.variable} antialiased`}
+        className={`${kurale} ${geistMono.variable} ${nunito.className} antialiased`}
       >
         {children}
       </body>
