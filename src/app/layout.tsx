@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Kurale, Geist_Mono, Nunito } from "next/font/google";
+import { Kurale, Geist_Mono, Nunito, Merriweather } from "next/font/google";
 import "./globals.css";
 
 const kurale = Kurale({
@@ -18,6 +18,11 @@ const nunito = Nunito({
   variable: "--font-nunito",
 });
 
+const merriweather = Merriweather({
+		subsets: ["latin", "cyrillic"],
+		variable: "--font-merriweather",
+})
+
 export const metadata: Metadata = {
   title: "Neoma WebStudio",
   description: "Neoma WebStudio	- ваш надійний партнер у світі цифрових рішень. Ми спеціалізуємося на створенні інноваційних веб-сайтів, мобільних додатків та комплексних цифрових стратегій, які допомагають бізнесам зростати та досягати нових висот. Наша команда експертів поєднує креативність, технології та досвід, щоб забезпечити найкращі результати для наших клієнтів. Долучайтеся до нас і відкрийте нові можливості для вашого бізнесу в цифровому світі.",
@@ -31,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kurale} ${geistMono.variable} ${nunito.className} antialiased`}
+        className={`${kurale} ${geistMono.variable} ${nunito.className} ${merriweather.className} antialiased`}
       >
         {children}
       </body>

@@ -12,7 +12,7 @@ const info = [{
     description: 'Задоволених клієнтів',
 }]
 const ExperienceInfo = () => {
-    return <div className="flex gap-6 py-12 font-nunito">
+    return <div className="flex gap-6 py-12 font-nunito ">
         {info.map((item, index) => (
             <div key={index} className="border rounded-xl border-[#A93CFF] flex-1 text-white p-4 text-center">
                 <div className="text-[64px]/19 mb-6">{item.title}</div>
