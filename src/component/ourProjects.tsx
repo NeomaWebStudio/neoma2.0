@@ -47,7 +47,7 @@ const OurProjects = () => {
                 <div className='flex flex-col flex-6/12 gap-24'>
                     <div className='text-white '>
                         <h2 className='mb-6 font-nunito text-2xl'>TimeCrafters</h2>
-                        <p className='text-base'>
+                        <p className='text-base font-merriweather'>
                             Проєкт розробки односторінкового сайту для бренду елітних
                             годинників. Основна задача полягала у створенні стильного та
                             водночас функціонального лендінгу, який підкреслює преміальність
