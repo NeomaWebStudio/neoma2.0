@@ -24,7 +24,7 @@ type PropType = {
     // slides: number[]
     // options?: EmblaOptionsType
     // @ts-ignore
-    handleCustomClick?: CallbackType
+    triggerAnimation?: CallbackType
 }
 
 const SlideImages = [
@@ -39,12 +39,13 @@ const OPTIONS: EmblaOptionsType = { loop: true }
 const SLIDE_COUNT = 5
 const Slides = Array.from(Array(SLIDE_COUNT).keys())
 
-const EmblaCarousel: React.FC<PropType> = ({ handleCustomClick }) => {
+const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
     // const { slides, options } = props
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
     const tweenFactor = useRef(0)
     const tweenNodes = useRef<HTMLElement[]>([])
+    const throttleRef = useRef<NodeJS.Timeout | null>(null);
 
     const { selectedIndex, scrollSnaps, onDotButtonClick } =
         useDotButton(emblaApi)
@@ -119,9 +120,18 @@ const EmblaCarousel: React.FC<PropType> = ({ handleCustomClick }) => {
             .on('reInit', setTweenFactor)
             .on('reInit', tweenScale)
             .on('scroll', tweenScale)
-            // .on('scroll', handleCustomClick)
             .on('slideFocus', tweenScale)
     }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor])
+
+    const throttledTriggerAnimation = () => {
+        if (throttleRef.current) return;
+        if (typeof triggerAnimation === 'function') {
+            triggerAnimation();
+        }
+        throttleRef.current = setTimeout(() => {
+            throttleRef.current = null;
+        }, 2000);
+    };
 
     return (
         <div className="embla">
@@ -145,7 +155,11 @@ const EmblaCarousel: React.FC<PropType> = ({ handleCustomClick }) => {
             </div>
 
             <div className="embla__controls">
-                <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+                <PrevButton onClick={() => {
+                    onPrevButtonClick() 
+                    throttledTriggerAnimation()
+                }}
+                    disabled={prevBtnDisabled} />
 
                 <div className="embla__dots">
                     {scrollSnaps.map((_, index) => (
@@ -159,7 +173,10 @@ const EmblaCarousel: React.FC<PropType> = ({ handleCustomClick }) => {
                     ))}
                 </div>
 
-                <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+                <NextButton onClick={() => {
+                    onNextButtonClick()
+                    throttledTriggerAnimation()
+                }} disabled={nextBtnDisabled} />
 
             </div>
         </div>
