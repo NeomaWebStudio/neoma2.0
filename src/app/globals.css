@@ -43,20 +43,18 @@ a {
 	--slide-spacing: 1rem;
 	--slide-size: 55%;
 
-	  --slide-height: 19rem;
-  --slide-spacing: .7rem;
-  --slide-size: 100%;
-  --slide-spacing-sm: 1rem;
-  --slide-size-sm: 50%;
-  --slide-spacing-lg: 2rem;
-  --slide-size-lg: calc(100% / 3);
+	--slide-height-fb: 19rem;
+	--slide-spacing-fb: 0.7rem;
+	--slide-size-fb: 100%;
+	--slide-spacing-sm-fb: 1rem;
+	--slide-size-sm-fb: 50%;
+	--slide-spacing-lg-fb: 2rem;
+	--slide-size-lg-fb: calc(100% / 3);
 
 	--detail-medium-contrast: rgb(25, 25, 25);
 }
 .embla-feedback {
 	padding: 1rem 0;
-	
-
 }
 
 .embla__viewport {
@@ -70,23 +68,22 @@ a {
 }
 
 .embla__container-feedback {
-  backface-visibility: hidden;
-  display: flex;
-  touch-action: pan-y pinch-zoom;
-  margin-left: calc(var(--slide-spacing) * -1);
+	backface-visibility: hidden;
+	display: flex;
+	touch-action: pan-y pinch-zoom;
+	margin-left: calc(var(--slide-spacing-fb) * -1);
 }
 
 @media (min-width: 750px) {
-  .embla__container {
-    margin-left: calc(var(--slide-spacing-sm) * -1);
-  }
+	.embla__container {
+		margin-left: calc(var(--slide-spacing-sm) * -1);
+	}
 }
 @media (min-width: 1200px) {
-  .embla__container {
-    margin-left: calc(var(--slide-spacing-lg) * -1);
-  }
+	.embla__container {
+		margin-left: calc(var(--slide-spacing-lg) * -1);
+	}
 }
-
 
 .embla__slide {
 	transform: translate3d(0, 0, 0);
@@ -96,20 +93,20 @@ a {
 }
 
 .embla__slide-feedback {
-  min-width: 0;
-  flex: 0 0 var(--slide-size);
-  padding-left: var(--slide-spacing);
+	min-width: 0;
+	flex: 0 0 var(--slide-size-fb);
+	padding-left: var(--slide-spacing-fb);
 }
 @media (min-width: 750px) {
-  .embla__slide-feedback {
-    flex: 0 0 var(--slide-size-sm);
-    padding-left: var(--slide-spacing-sm);
-  }
+	.embla__slide-feedback {
+		flex: 0 0 var(--slide-size-sm-fb);
+		padding-left: var(--slide-spacing-sm-fb);
+	}
 }
 /* @media (min-width: 1200px) {
   .embla__slide-feedback {
-    flex: 0 0 var(--slide-size-lg);
-    padding-left: var(--slide-spacing-lg);
+    flex: 0 0 var(--slide-size-lg-fb);
+    padding-left: var(--slide-spacing-lg-fb);
   }
 } */
 
