@@ -7,12 +7,12 @@ import Spline from '@splinetool/react-spline';
 const OurProjects = () => {
     const splineRef = useRef<any>(null);
 
-    const onLoad = (splineApp: any) =>{
+    const onLoad = (splineApp: any) => {
         splineRef.current = splineApp;
     }
 
-    const triggerAnimation = () =>{
-        splineRef.current.emitEvent('mouseDown', 'Text');
+    const triggerAnimation = () => {
+        splineRef.current.emitEvent('mouseDown', 'Forward');
     }
 
     return (
@@ -35,14 +35,16 @@ const OurProjects = () => {
                         <EmblaCarousel triggerAnimation={triggerAnimation} />
                     </div>
                 </div>
-                
-                <div className='flex-6/12 flex justify-center items-center'></div>
 
-                <Spline
-                    scene='https://prod.spline.design/2-WT6wQTY0UGXc6z/scene.splinecode'
-                    onLoad={onLoad}
-                    className='absolute'
-                />
+                <div className='relative flex-6/12 flex justify-center items-center 
+                after:content-[""] after:absolute after:top-1/2  after:-translate-y-1/2 after:left-10 
+                after:w-[138px] after:h-[80px] after:bg-[#05040D]'>
+                    <Spline
+                        scene='https://prod.spline.design/2-WT6wQTY0UGXc6z/scene.splinecode'
+                        onLoad={onLoad}
+                    />
+                </div>
+
             </div>
         </section>
     );
