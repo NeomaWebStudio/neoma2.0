@@ -4,12 +4,12 @@ import Spline from '@splinetool/react-spline';
 
 const Header = () => {
 	return (
-		<div className='flex flex-col h-screen relative  overflow-hidden'> {/* Загальний контейнер */}
+		<div className='flex flex-col h-screen relative  overflow-hidden border '> {/* Загальний контейнер */}
 			<div className=''>
 				<Nav />
 			</div>
-			 <div className=' mt-[140px] w-[636px] bg-[#05040D] relative flex flex-col   '>
-					<div className=' w-full '>
+			 <div className=' mt-[140px] bg-[#05040D] relative flex flex-row '>
+					<div className=' w-[636px] '>
 						<h1 className='text-[64px] tracking-[3%] leading-[68px] text-white'>Цифрові рішення, <br/> що залучають <br/> клієнтів</h1>
 						<p className='text-[32px] leading-9.5 tracking-0 text-white mt-4'>Кожна функція створена для <br/> ефективності та зростання вашого бренду</p>
 						<div className='mt-[32px] flex gap-6'>
@@ -18,8 +18,8 @@ const Header = () => {
 						</div>
 				</div>
 				</div>
-				<div className='absolute z-10 w-[700px]	h-[570px] bottom-5 right-[-83px] after:content-[""] after:absolute after:bottom-3 after:right-5 after:w-[138px] after:h-[45px] after:bg-[#05040D] '>
-					<Spline scene='https://prod.spline.design/iAnALJoO3-LokGfj/scene.splinecode' className="pointer-events-none"/>
+				<div className='absolute z-10 w-[540px]	h-[690px] right-0 top-[70px] '>
+					<Spline scene='/phone.splinecode' className="pointer-events-none"/>
 				</div>
 		</div>
 	);
