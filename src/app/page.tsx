@@ -3,7 +3,7 @@ import ExperienceInfo from '@/component/experience-info';
 import Header from '@/component/header';
 import Price from '@/component/price';
 import OurProjects from '@/component/ourProjects';
-import Faq from '@/component/faq';
+import FeedbackSection from '@/component/feedback-section';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
 						<About/>
 						<Price />
       <OurProjects /> 
-						<Faq/>
+      <FeedbackSection />
     </main>
   );
 }
