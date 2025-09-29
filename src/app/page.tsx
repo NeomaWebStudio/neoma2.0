@@ -4,6 +4,9 @@ import Header from '@/component/header';
 import Price from '@/component/price';
 import OurProjects from '@/component/ourProjects';
 import FeedbackSection from '@/component/feedback-section';
+import Faq from '@/component/faq';
+import FeedbackForm from '@/component/feedbackForm';
+import Footer from '@/component/footer';
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
 						<Price />
       <OurProjects /> 
       <FeedbackSection />
+						<Faq/>
+						<FeedbackForm/>
+						<Footer/>
     </main>
   );
 }

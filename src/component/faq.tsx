@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Spline from "@splinetool/react-spline";
 
 const items = [
-  { q: "Чому самописні сайти дорожчі за ті, що на шаблонах?", a: " Тому що ми пишемо код з нуля під ваш бізнес. Це означає: більше швидкості (сайт працює без зайвого “сміття”),унікальний дизайн,легке масштабування під майбутні потреби." },
   { q: "Скільки коштує сайт?", a: "tettss" },
   { q: "Скільки часу займає розробка?", a: "tettss" },
   { q: "Чи робите ви дизайн?", a: "tettss" },
@@ -41,6 +40,16 @@ export default function Faq() {
         </div>
 
         <div id="accordion" className="w-[636px] h-[744px] text-white flex flex-col gap-3 mt-10">
+
+									<details className="h-auto text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)]">
+												<summary className="list-none cursor-pointer"> Чому самописні сайти дорожчі за ті, що на шаблонах?	</summary>
+												<div className="text-[16px] mt-4 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-40">
+													<p className="">Тому що ми пишемо код з нуля під ваш бізнес. Це означає:</p> <br/>
+													<li className="ml-10">більше швидкості (сайт працює без зайвого “сміття”)</li>
+													<li className="ml-10">унікальний дизайн</li>
+													<li className="ml-10">легке масштабування під майбутні потреби</li>
+												</div>
+									</details>
           {items.map((it, idx) => (
             <details
               key={idx}
