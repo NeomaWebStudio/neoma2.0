@@ -19,6 +19,9 @@ module.exports = {
           nunito: ["var(--font-nunito)", "sans-serif"],
         }
       },
+      translate: {
+        '17': '4.25rem', // 68px
+      },
     },
   },
   plugins: [],
