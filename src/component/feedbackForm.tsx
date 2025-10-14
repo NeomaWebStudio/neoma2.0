@@ -3,7 +3,7 @@ import Spline from '@splinetool/react-spline';
 
 const FeedbackForm = () => {
 	return (
-		<div className='mt-12 flex  w-full text-white border border-amber-200 mb-100'>
+		<div className='mt-12 flex w-full text-white border border-amber-200 mb-100'>
 				<h2 className='border border-amber-500 font-nunito text-5xl text-white flex justify-center items-center mb-10'>Контакти</h2>
 			<div>
 			<div className='flex flex-col gap-3 border border-amber-900'>

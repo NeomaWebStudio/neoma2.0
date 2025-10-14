@@ -51,17 +51,17 @@ export default function Faq() {
 
  return (
   <div className="flex flex-col items-center">
-   <h3 className="text-white font-nanito text-5xl">Faq</h3>
-   <div className="flex flex-row">
-    <div className="w-[636px] h-[744px] mt-[150px]">
+     <h3 className="text-[28px] md:text-5xl text-white font-nanito">Faq</h3>
+   <div className="flex flex-col md:flex-row">
+       <div className="md:w-[636px] md:h-[744px] mt-[40px] md:mt-[150px]">
      <Spline scene="/sphere.splinecode" />
     </div>
 
     <div
      id="accordion"
-     className="w-[636px] h-[744px] text-white flex flex-col gap-3 mt-10"
+     className="md:w-[636px] h-[744px] text-white flex flex-col gap-3 mt-10"
     >
-     <details className="h-auto text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)]">
+         <details className="text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)]">
       <summary className="list-none cursor-pointer">
        {" "}
        Чому самописні сайти дорожчі за ті, що на шаблонах?{" "}
@@ -82,7 +82,7 @@ export default function Faq() {
       <details
        key={idx}
        open={openIndex === idx}
-       className="h-auto text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)] transition-all duration-300 ease-in-out"
+         className="text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)] transition-all duration-300 ease-in-out"
       >
        <summary
         className="list-none cursor-pointer select-none"

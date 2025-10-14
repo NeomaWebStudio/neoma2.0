@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import Image from 'next/image';
+
 
 const Nav = () => {
  const [active, setActive] = useState("Головна");
@@ -19,7 +21,7 @@ const Nav = () => {
   <div className="flex flex-row items-center h-22 bg-[#05040D] text-white  sticky font-kurale" >
    <img src="/logo.svg" alt="Логотип" className="h-16 w-16 " />
 
-   <div className="w-[879px] h-7 flex flex-row justify-center items-center mr-6">
+   <div className="hidden w-[879px] h-7 md:flex flex-row justify-center items-center mr-6">
     <ul className="flex gap-6">
      {menuItems.map((item) => (
       <li key={item}>
@@ -41,7 +43,7 @@ const Nav = () => {
     </ul>
    </div>
 
-   <div className="flex flex-row justify-center items-center gap-2">
+   <div className="hidden md:flex flex-row justify-center items-center gap-2">
     <p>En</p>
     <img
      src="/assets/icon/nav-arrow-down.svg"
@@ -51,13 +53,15 @@ const Nav = () => {
    </div>
 
    <button
-  className="text-black bg-[#FFA157] cursor-pointer w-49 h-10 rounded-[24px] text-center 
+  className="hidden md:block text-black bg-[#FFA157] cursor-pointer w-49 h-10 rounded-[24px] text-center 
              shadow-[inset_4px_4px_0_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15)] ml-6 
              hover:shadow-[inset_4px_4px_4px_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15),4px_4px_8px_4px_rgba(252,125,23,0.5)]
              transition-shadow duration-300 ease-in-out"
 >
   Зв’язатися
-</button>
+     </button>
+     
+     <div className='ml-auto'><Image src={'/menu.png'} width={24} height={24} alt='menu-icon' /></div>
 
   </div>
  );

@@ -159,7 +159,8 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
                     onPrevButtonClick() 
                     throttledTriggerAnimation()
                 }}
-                    disabled={prevBtnDisabled} />
+                    disabled={prevBtnDisabled}
+                    className='hidden md:block' />
 
                 <div className="embla__dots">
                     {scrollSnaps.map((_, index) => (
@@ -176,7 +177,8 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
                 <NextButton onClick={() => {
                     onNextButtonClick()
                     throttledTriggerAnimation()
-                }} disabled={nextBtnDisabled} />
+                }} disabled={nextBtnDisabled}
+                    className='hidden md:block' />
 
             </div>
         </div>

@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 480px;
+  --breakpoint-md: 744px;
+}
+
 :root {
 	--Orange: #ffa157;
 	--Background: #05040d;
@@ -101,6 +106,21 @@ a {
 	.embla__slide-feedback {
 		flex: 0 0 var(--slide-size-sm-fb);
 		padding-left: var(--slide-spacing-sm-fb);
+	}
+}
+@media (max-width: 480px) {
+	.embla__slide {
+	transform: translate3d(0, 0, 0);
+	/* flex: 0 0 450px;
+	overflow: hidden; */
+	min-width: 0;
+	padding-left: var(--slide-spacing);
+}
+	.embla__slide-feedback {
+		/* flex: 0 0 var(--slide-size-sm-fb);
+		padding-left: var(--slide-spacing-sm-fb); */
+		padding-left: 25px;
+		padding-right: 25px;
 	}
 }
 /* @media (min-width: 1200px) {
