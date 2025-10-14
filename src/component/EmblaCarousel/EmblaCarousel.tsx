@@ -24,22 +24,49 @@ type PropType = {
     // slides: number[]
     // options?: EmblaOptionsType
     // @ts-ignore
-    triggerAnimation?: CallbackType
+    triggerAnimation?: CallbackType,
+    onSlideChange?: (index: number) => void
 }
 
 const SlideImages = [
-    '/assets/images/random-img-1.jpg',
-    '/assets/images/random-img-2.jpg',
-    '/assets/images/random-img-3.jpg',
-    '/assets/images/random-img-4.jpg',
-    '/assets/images/random-img-5.jpg'
+
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-1.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-2.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-3.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-4.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-5.jpg',
+    }
+    // '/assets/images/random-img-1.jpg',
+    // '/assets/images/random-img-2.jpg',
+    // '/assets/images/random-img-3.jpg',
+    // '/assets/images/random-img-4.jpg',
+    // '/assets/images/random-img-5.jpg'
 ]
 
 const OPTIONS: EmblaOptionsType = { loop: true }
 const SLIDE_COUNT = 5
 const Slides = Array.from(Array(SLIDE_COUNT).keys())
 
-const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
+const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) => {
     // const { slides, options } = props
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
@@ -109,6 +136,24 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
     )
 
     useEffect(() => {
+        if (!emblaApi) return;
+
+        const onSelect = () => {
+            if (onSlideChange) {
+                onSlideChange(emblaApi.selectedScrollSnap());
+            }
+        };
+
+        emblaApi.on('select', onSelect);
+        // Call once on mount
+        onSelect();
+
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
+    }, [emblaApi, onSlideChange]);
+
+    useEffect(() => {
         if (!emblaApi) return
 
         setTweenNodes(emblaApi)
@@ -145,7 +190,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
                                     height={600}
                                     alt={`Slide ${index + 1}`}
                                     className="embla__slide__img"
-                                    src={SlideImages[index]}
+                                    src={SlideImages[index].src}
                                     priority
                                 />
                             </div>
@@ -156,7 +201,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
 
             <div className="embla__controls">
                 <PrevButton onClick={() => {
-                    onPrevButtonClick() 
+                    onPrevButtonClick()
                     throttledTriggerAnimation()
                 }}
                     disabled={prevBtnDisabled}

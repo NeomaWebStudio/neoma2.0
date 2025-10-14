@@ -3,6 +3,8 @@
 @theme {
   --breakpoint-xs: 480px;
   --breakpoint-md: 744px;
+  --breakpoint-lg: 900px;
+  --breakpoint-xl: 1200px;
 }
 
 :root {
@@ -178,7 +180,8 @@ a {
 }
 
 .embla__button:disabled {
-	color: var(--Orange);
+	color: grey;
+	border-color: grey;
 }
 
 .embla__button__svg {
@@ -232,4 +235,64 @@ a {
 
 .embla__slide__number {
 	backface-visibility: hidden;
+}
+
+
+.prise_items-container {
+	display: grid;
+	width: 100%;
+	gap: 24px;
+	margin-top: 48px;
+	grid-template-areas:
+		"basic standart premium"
+		"brending tg support";
+}
+
+@media (max-width: 830px){
+	.prise_items-container {
+			grid-template-areas:
+			"basic"
+			"standart"
+			"premium"
+			"brending" 
+			"tg" 
+			"support";
+	}
+}
+
+@media (min-width: 830px) and (max-width: 1250px) {
+	.prise_items-container {
+		grid-template-areas:
+			"basic basic standart standart"
+			". premium premium ."
+			"brending brending tg tg"
+			". support support .";
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	}
+}
+
+.feedback_form-container {
+	display: grid;
+	width: 100%;
+	gap: 48px;
+		grid-template-areas:
+		"socials spline inputs"	
+}
+
+@media (max-width: 744px){
+	.feedback_form-container {
+			grid-template-areas:
+			"socials"
+			"inputs"
+			"spline";
+	}
+}
+
+@media (min-width: 744px) and (max-width: 1200px) {
+	.feedback_form-container {
+		grid-template-areas:
+			"socials spline"
+			"inputs spline";
+			/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+	}
 }

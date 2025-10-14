@@ -10,15 +10,15 @@ import Footer from '@/component/footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-w-[1440px] px-[18px] md:px-18 mx-auto">
-      {/* <Header /> */}
-      {/* <ExperienceInfo /> */}
-						{/* <About/> */}
-						{/* <Price /> */}
+    <main className="min-h-screen max-w-[1440px] px-[18px] xs:px-[30px] md:px-18 mx-auto">
+      <Header />
+      <ExperienceInfo />
+						<About/>
+						<Price />
       {/* <OurProjects />  */}
-      {/* <FeedbackSection /> */}
-						{/* <Faq/> */}
-						{/* <FeedbackForm/> */}
+      <FeedbackSection />
+						<Faq/>
+						<FeedbackForm/>
 						{/* <Footer/> */}
     </main>
   );
