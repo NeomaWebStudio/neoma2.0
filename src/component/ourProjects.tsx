@@ -3,7 +3,11 @@ import { useRef } from 'react';
 import EmblaCarousel from '@/component/EmblaCarousel/EmblaCarousel';
 import Spline from '@splinetool/react-spline';
 
-const OurProjects = () => {
+interface TranslationProps {
+  translations: Record<string, string>;
+}
+
+const OurProjects = ({ translations }: TranslationProps) => {
   const splineRef = useRef<any>(null);
 
   // Функція, яка виконується після завантаження сцени
@@ -23,17 +27,13 @@ const OurProjects = () => {
   return (
     <section className='mb-44'>
       <h1 className='text-white font-nunito text-5xl mt-12 mb-10 text-center'>
-        Наші проекти
+        {translations["our_projects"]}
       </h1>
       <div className='flex items-stretch relative'>
         <div className='flex flex-col flex-6/12 gap-24 z-30'>
           <div className='text-white'>
             <h2 className='mb-6 font-nunito text-2xl'>TimeCrafters</h2>
-            <p className='text-base font-merriweather'>
-              Проєкт розробки односторінкового сайту для бренду елітних годинників. 
-              Основна задача полягала у створенні стильного та водночас функціонального лендінгу, 
-              який підкреслює преміальність продукту та формує відчуття цінності часу.
-            </p>
+            <p className='text-base font-merriweather' dangerouslySetInnerHTML={{ __html: translations["our_projects_text"] }} />
           </div>
           <div className='relative index-1'>
             {/* Передаємо triggerAnimation в EmblaCarousel */}

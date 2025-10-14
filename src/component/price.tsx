@@ -1,19 +1,22 @@
 import React from "react";
 import { priceData } from "./data/priceData";
+import { priceDataEN } from "./data/priceDataEN";
 
-const Price = () => {
+interface TranslationProps {
+  translations: Record<string, string>;
+  locale: string;
+}
+
+const Price = ({ translations, locale }: TranslationProps) => {
+ const priceDataLocalized = locale === 'en' ? priceDataEN : priceData;   
  return (
   <div className="flex flex-col items-center h-[1146px] py-12">
-   <h3 className="text-white text-5xl text-nutito">Ціни та послуги</h3>
+   <h3 className="text-white text-5xl text-nutito">{translations["prices_and_services"]}</h3>
    <p className="text-white text-[16px] w-[760px] mt-10 leading-6 ">
-    Ми не працюємо за шаблоном — кожен сайт чи додаток створюється під конкретні
-    цілі. Тому вартість завжди індивідуальна і залежить від рівня складності та
-    потрібних функцій. Ми можемо підключитися на будь-якому етапі — від
-    технічного завдання до запуску. Надішліть нам свій запит, і ми запропонуємо
-    оптимальний варіант.
+    {translations["prices_and_services_text"]}
    </p>
    <div className="flex gap-6 mt-16 flex-wrap w-[1296px]">
-    {priceData.map((item, id) => (
+    {priceDataLocalized.map((item, id) => (
      <div
       key={item.id}
       className="w-[416px] ${item.height} bg-[#0A081A] text-white p-4 rounded-2xl border border-[#A93CFF] font-nunito flex	flex-col"
