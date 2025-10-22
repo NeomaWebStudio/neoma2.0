@@ -1,0 +1,111 @@
+import { title } from "process";
+const coins = '../../assets/icon/coins.svg';
+const time = '../../assets/icon/clock.svg';
+const buy = '../../assets/icon/cart.svg';
+
+export const priceDataEN = [
+	{
+		id:1,
+		title: "Basic",
+		icon:	coins,
+		price: "від 20 000грн",
+		timeIcon: time,
+		time: "2-3 weeks",
+		features: [
+			"Fully custom one-page website",
+			"Unique design",
+			"Clean and optimized code",
+			"Responsive (Desktop + Mobile)",
+			"Basic SEO optimization",
+		],
+		buttonText: "Order",
+		buttonLink: "#",
+		buyIcon:	buy,
+		height: 'h-[436px]'
+	},
+	{
+		id:2,
+		title: "Standart",
+		icon:	coins,
+		price: "від 35 000 грн",
+		timeIcon: time,
+		time: "4-6 weeks",
+		features: [
+			"3–6 pages",
+			"Custom admin panel / CMS (basic functionality)",
+			"Responsive design",
+			"Integration of forms and analytics",
+		],
+		buttonText: "Order",
+		buttonLink: "#",
+		buyIcon:	buy,
+		height: 'h-[436px]'
+	},
+	{
+		id:3,
+		title: "Premium",
+		icon:	coins,
+		price: "від 65 000 грн",
+		timeIcon: time,
+		time: "2-3 month",
+		features: [
+			"Custom product catalog",
+			"Shopping cart + order management system",
+			"Integration of online payment and delivery",
+			"Admin panel for content management",
+			"Responsive design and SEO",
+		],
+		buttonText: "Order",
+		buttonLink: "#",
+		buyIcon:	buy,
+		height: 'h-[436px]'
+	},
+	{
+		id:4,
+		title: "Logo / Branding",
+		icon:	coins,
+		price: "від 7 000 грн",
+		features: [
+			"Logo, identity, and color palette",
+			"Brandbook / guidelines (if needed)",
+			"Versions for print and digital",
+		],
+		buttonText: "Order",
+		buttonLink: "#",
+		buyIcon:	buy,
+		height: 'h-[368px]'
+	},
+	{
+		id:5,
+		title: "Telegram-bot",
+		icon:	coins,
+		price: "від 12 000 грн",
+		features: [
+			"Custom logic tailored to your needs",
+			"Support for buttons, forms, and workflows",
+			"Data storage in a database (e.g., Supabase)",
+			"Mobile UX–friendly responsiveness",
+		],
+		buttonText: "Order",
+		buttonLink: "#",
+		buyIcon:	buy,
+		height: 'h-[368px]'
+	},
+	{
+		id:6,
+		title: "Support",
+		icon:	coins,
+		price: "від 5 000 грн/місяць",
+		features: [
+			"Technical optimization and security",
+			"Performance monitoring",
+			"Bug fixes and minor improvements",
+			"Ongoing project support",
+		],
+		buttonText: "Order",
+		buttonLink: "#",
+		buyIcon:	buy,
+		height: 'h-[368px]'
+	},
+	
+]
