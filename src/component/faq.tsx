@@ -2,35 +2,9 @@
 import React, { useState } from "react";
 import Spline from "@splinetool/react-spline";
 
-const items = [
-  {
-    q: "Скільки коштує сайт?",
-    a: [
-      "Лендінг від 20 000 грн",
-      " корпоративний сайт від 35 000 грн",
-      " інтернет-магазин від 65 000 грн.",
-      "Ціна залежить від функціоналу та складності."
-    ]
-  },
-  {
-    q: "Скільки часу займає розробка?",
-    a: {
-      text: "В середньому:",
-      list: [
-        " Лендінг — 2–3 тижні",
-        "Корпоративний сайт — 4–6 тижнів",
-        " Інтернет-магазин — 2–3 місяці. ",
-        "Але все залежить від швидкості узгодження."
-      ]
-    }
-  },
-  { q: "Чи робите ви дизайн?", a: "Так, ми створюємо дизайн. У вас буде унікальний макет без копіювання шаблонів." },
-  { q: "Чи можна внести зміни після запуску?", a: "Так. Ми надаємо техпідтримку і можемо доопрацьовувати сайт після релізу." },
-  { q: "Чи входить SEO у вартість?", a: "Ми робимо базову SEO-оптимізацію (структура, швидкість, теги). Для комплексного просування можемо підключити спеціалістів." },
-  { q: "Як відбувається оплата?", a: "Зазвичай 50% передоплати та 50% після завершення проєкту." },
-  { q: "Чи робите ви Telegram-ботів та додатки?", a: "Так. Ми можемо розробити бота для замовлень, консультацій чи автоматизації бізнесу." },
-  { q: "Ви працюєте тільки з Україною?", a: "Ні, ми відкриті до клієнтів з будь-яких країн. Оплата приймається в зручній валюті." }
-];
+interface TranslationProps {
+  translations: Record<string, string>;
+}
 
 /**
  * Faq component
@@ -39,8 +13,36 @@ const items = [
  *
  * @returns {JSX.Element} The Faq component
  */
-export default function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+export default function Faq({ translations }: TranslationProps) {
+  const items = [
+ {
+  q: translations["faq_q2"],
+  a: [
+   translations["faq_a21"],
+   translations["faq_a22"],
+   translations["faq_a23"],
+   translations["faq_a24"]
+  ]
+ },
+ {
+  q: translations["faq_q3"],
+  a: { text: "В середньому:" ,
+  list: [
+   translations["faq_a31"],
+   translations["faq_a32"],
+   translations["faq_a33"],
+   translations["faq_a34"]
+  ]
+	}
+ },
+ { q: translations["faq_q4"], a: translations["faq_a4"] },
+ { q: translations["faq_q5"], a: translations["faq_a5"] },
+ { q: translations["faq_q6"], a: translations["faq_a6"] },
+ { q: translations["faq_q7"], a: translations["faq_a7"] },
+ { q: translations["faq_q8"], a: translations["faq_a8"] },
+ { q: translations["faq_q9"], a: translations["faq_a9"] }
+];
+ const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   /**
    * Toggle the details element of the given index
@@ -65,18 +67,18 @@ export default function Faq() {
           <details className="text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)]">
             <summary className="list-none cursor-pointer">
               {" "}
-              Чому самописні сайти дорожчі за ті, що на шаблонах?{" "}
+              {translations["faq_q1"]}{" "}
             </summary>
             <div className="text-[16px] mt-4 ">
               <p className="">
-                Тому що ми пишемо код з нуля під ваш бізнес. Це означає:
+                {translations["faq_a1"]}
               </p>{" "}
               <br />
               <li className="ml-10">
-                більше швидкості (сайт працює без зайвого “сміття”)
+                {translations["faq_a11"]}{" "}
               </li>
-              <li className="ml-10">унікальний дизайн</li>
-              <li className="ml-10">легке масштабування під майбутні потреби</li>
+              <li className="ml-10">{translations["faq_a12"]}</li>
+              <li className="ml-10">{translations["faq_a13"]}</li>
             </div>
           </details>
           {items.map((it, idx) => (

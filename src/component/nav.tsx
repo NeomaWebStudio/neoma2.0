@@ -2,20 +2,13 @@
 import React, { useState } from "react";
 import Image from 'next/image';
 
+import MenuItemsList from './MenuItemsList';
 
-const Nav = () => {
- const [active, setActive] = useState("Головна");
+interface TranslationProps {
+  translations: Record<string, string>;
+}
 
- const menuItems = [
-  "Головна",
-  "Про нас",
-  "Послуги",
-  "Портфоліо",
-  "Ціни",
-  "Відгуки",
-  "FAQ",
-  "Контакти"
- ];
+const Nav = ({ translations }: TranslationProps)  => {
 
  return (
    <div className="flex flex-row items-center h-22 bg-[#05040D] text-white  sticky font-kurale" >
@@ -23,7 +16,9 @@ const Nav = () => {
         <img src="/logo.svg" alt="Логотип" className="h-16 w-16 " />
      </div>
 
-   <div className="hidden w-[879px] h-7 xl:flex flex-row justify-center items-center mr-6">
+   
+
+   {/* <div className="hidden w-[879px] h-7 xl:flex flex-row justify-center items-center mr-6">
     <ul className="flex gap-6">
      {menuItems.map((item) => (
       <li key={item}>
@@ -44,6 +39,11 @@ const Nav = () => {
      ))}
     </ul>
    </div>
+      */}
+
+
+
+   <MenuItemsList  translations={translations}/>
 
    <div className="hidden xl:flex flex-row justify-center items-center gap-2">
     <p>En</p>
@@ -60,7 +60,10 @@ const Nav = () => {
              hover:shadow-[inset_4px_4px_4px_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15),4px_4px_8px_4px_rgba(252,125,23,0.5)]
              transition-shadow duration-300 ease-in-out"
 >
-  Зв’язатися
+
+
+
+       {translations['contact_btn_short']}
      </button>
      
      <div className='ml-auto xs:ml-0 xs:mr-auto xs:order-1 xl:order-none xl:hidden'><Image src={'/menu.png'} width={24} height={24} alt='menu-icon' /></div>

@@ -3,6 +3,10 @@ import { useRef, useState } from 'react';
 import EmblaCarousel from '@/component/EmblaCarousel/EmblaCarousel';
 import Spline from '@splinetool/react-spline';
 
+interface TranslationProps {
+    translations: Record<string, string>;
+}
+
 const SlideDescriptions = [
     {
         title: "TimeCrafters",
@@ -26,7 +30,7 @@ const SlideDescriptions = [
     }
 ];
 
-const OurProjects = () => {
+const OurProjects = ({ translations }: TranslationProps) => {
     const splineRef = useRef<any>(null);
 
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -56,7 +60,7 @@ const OurProjects = () => {
     return (
         <section className='mb-44'>
             <h1 className='text-white font-nunito text-[28px] md:text-5xl mt-12 mb-10 text-center'>
-                Наші проекти
+                {translations["our_projects"]}
             </h1>
             <div className='flex z-30'>
                 <div className='flex-[50%]'>
