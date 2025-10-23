@@ -14,6 +14,8 @@ import {
 } from '@/component/EmblaCarousel/EmblaCarouselArrowButtons';
 import { DotButton, useDotButton } from '@/component/EmblaCarousel/EmblaCarouselDotButtons';
 import useEmblaCarousel from 'embla-carousel-react';
+import FeedbackCard from '../feedback-card';
+import EmblaCarouselCard from './EmblaCarouselCard';
 
 const TWEEN_FACTOR_BASE = 0.52
 
@@ -128,7 +130,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
                     const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
                     const scale = numberWithinRange(tweenValue, 0, 1).toString()
                     const tweenNode = tweenNodes.current[slideIndex]
-                    tweenNode.style.transform = `scale(${scale})`
+                    // tweenNode.style.transform = `scale(${scale})`
                 })
             })
         },
@@ -180,7 +182,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
 
     return (
         <div className="embla">
-            <div className="embla__viewport" ref={emblaRef}>
+            <div className="hidden md:block embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {Slides.map((index) => (
                         <div className="embla__slide" key={index}>
@@ -199,13 +201,22 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
                 </div>
             </div>
 
+            {/* <div className="embla__viewport" ref={emblaRef}>
+                <div className="md:hidden embla__container-feedback">
+                    {Slides.map((index) => (
+                        <EmblaCarouselCard src={SlideImages[index].src} key={index} />
+                    ))}
+                </div>
+            </div> */}
+
             <div className="embla__controls">
-                <PrevButton onClick={() => {
-                    onPrevButtonClick()
-                    throttledTriggerAnimation()
-                }}
+                <PrevButton
+                    onClick={() => {
+                        onPrevButtonClick()
+                        throttledTriggerAnimation()
+                    }}
                     disabled={prevBtnDisabled}
-                    className='hidden md:block' />
+                />
 
                 <div className="embla__dots">
                     {scrollSnaps.map((_, index) => (
@@ -219,11 +230,13 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
                     ))}
                 </div>
 
-                <NextButton onClick={() => {
-                    onNextButtonClick()
-                    throttledTriggerAnimation()
-                }} disabled={nextBtnDisabled}
-                    className='hidden md:block' />
+                <NextButton
+                    onClick={() => {
+                        onNextButtonClick()
+                        throttledTriggerAnimation()
+                    }}
+                    disabled={nextBtnDisabled}
+                />
 
             </div>
         </div>

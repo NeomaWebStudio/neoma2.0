@@ -34,10 +34,9 @@ const OurProjects = () => {
 
     const onSlideChange = (index: number) => {
         setFade(true);
-        setTimeout(() => {
             setSelectedIndex(index);
             setFade(false);
-        }, 250); // 250ms fade out, then fade in
+      
     };
 
     // Функція, яка виконується після завантаження сцени
@@ -59,10 +58,10 @@ const OurProjects = () => {
             <h1 className='text-white font-nunito text-[28px] md:text-5xl mt-12 mb-10 text-center'>
                 Наші проекти
             </h1>
-            <div className='flex flex-6/12 gap-24 z-30'>
-                <div>
+            <div className='flex z-30'>
+                <div className='flex-[50%]'>
                     <div
-                        className={`text-white transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'} min-h-50`}
+                        className={`text-white transition-opacity ${fade ? 'opacity-0' : 'opacity-100'} min-h-50`}
                         style={{ transitionProperty: 'opacity' }}
                     >
                         <h2 className='mb-6 font-nunito text-2xl'>
@@ -79,7 +78,7 @@ const OurProjects = () => {
                         />
                     </div>
                 </div>
-                <div className='hidden relative flex-6/12 md:flex justify-center items-center 
+                <div className='hidden relative flex-[50%] xl:flex justify-center items-center 
                 after:content-[""] after:absolute after:top-1/2  after:-translate-y-1/2 after:left-10 
                 after:w-[138px] after:h-[80px] after:bg-[#05040D]'>
                     <Spline
