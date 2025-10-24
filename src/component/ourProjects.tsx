@@ -63,9 +63,9 @@ const OurProjects = ({ translations }: TranslationProps) => {
         splineRef.current = splineApp;
         const objects = splineRef.current.children; // all objects in scene
         console.log(objects);
-        splineApp.children?.forEach(obj => {
-            console.log(obj.name, obj.userData);
-        });
+        // splineApp.children?.forEach(obj => {
+        //     console.log(obj.name, obj.userData);
+        // });
     };
     
     // Тригер анімації, перевіряємо, що сцена завантажена
