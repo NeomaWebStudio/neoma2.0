@@ -30,7 +30,7 @@ type PropType = {
     onSlideChange?: (index: number) => void
 }
 
-const SlideImages = [
+export const SlideImages = [
 
     {
         title: "TimeCrafters",
@@ -130,7 +130,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
                     const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
                     const scale = numberWithinRange(tweenValue, 0, 1).toString()
                     const tweenNode = tweenNodes.current[slideIndex]
-                    // tweenNode.style.transform = `scale(${scale})`
+                    tweenNode.style.transform = `scale(${scale})`
                 })
             })
         },
@@ -182,7 +182,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
 
     return (
         <div className="embla">
-            <div className="hidden md:block embla__viewport" ref={emblaRef}>
+            <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {Slides.map((index) => (
                         <div className="embla__slide" key={index}>
@@ -200,11 +200,22 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
                     ))}
                 </div>
             </div>
-
-            {/* <div className="embla__viewport" ref={emblaRef}>
-                <div className="md:hidden embla__container-feedback">
+{/* 
+            <div className="md:hidden embla__viewport" ref={emblaRef}>
+                <div className="embla__container-feedback">
                     {Slides.map((index) => (
-                        <EmblaCarouselCard src={SlideImages[index].src} key={index} />
+                        <div className="embla__slide" key={index}>
+                            <div>
+                                <Image
+                                    width={400}
+                                    height={900}
+                                    alt={`Slide ${index + 1}`}
+                                    className="embla__slide__img"
+                                    src={SlideImages[index].src}
+                                    priority
+                                />
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div> */}

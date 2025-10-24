@@ -6,9 +6,8 @@ export type FeedbackCardProps = {
     image?: string,
 }
 
-const EmblaCarouselCard = ({ src }) => {
-    console.log('🚀 ~ src:', src);
-    // console.log('🚀 ~ props:', props);
+const EmblaCarouselCard = ({ src }: string) => {
+
     return (
         <div className="embla__slide-feedback flex border gap-6 ">
             <div className="border rounded-xl border-[#A93CFF] w-76"
