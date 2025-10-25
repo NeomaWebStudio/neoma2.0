@@ -6,33 +6,39 @@ import EmblaCarouselFeedback from './EmblaCarousel/EmblaCarouselFeedbackSection'
 import { EmblaOptionsType } from 'embla-carousel';
 import { feedbackData } from './data/feedbackData';
 import EmblaCarouselOurProjectsMobile from './EmblaCarousel/EmblaCarouselOurProjectsMobile';
+import { v4 as uuidv4 } from 'uuid';
 
 interface TranslationProps {
     translations: Record<string, string>;
 }
 
-const SlideDescriptions = [
+export const SlideDescriptions = [
     {
+        id: uuidv4(),
         src: '/assets/images/random-img-6.jpg',
         title: "TimeCrafters",
         text: "Розробка односторінкового сайту для бренду елітних годинників. Створено стильний лендінг, який підкреслює преміальність продукту та формує відчуття цінності часу."
     },
     {
+        id: uuidv4(),
         src: '/assets/images/random-img-7.jpg',
         title: "EcoTravel",
         text: "Дизайн і запуск платформи для бронювання екологічних турів. Реалізовано інтерактивну карту, особистий кабінет користувача та систему онлайн-оплати."
     },
     {
+        id: uuidv4(),
         src: '/assets/images/random-img-8.jpg',
         title: "BookNest",
         text: "Створення онлайн-бібліотеки з адаптивним пошуком і рекомендаціями. Особливу увагу приділено зручності навігації та сучасному UI."
     },
     {
+        id: uuidv4(),
         src: '/assets/images/random-img-9.jpg',
         title: "FitLife App",
         text: "Розробка мобільного додатку для фітнесу з персональними тренуваннями, трекінгом прогресу та інтеграцією з розумними годинниками."
     },
     {
+        id: uuidv4(),
         src: '/assets/images/random-img-10.jpg',
         title: "UrbanArt Gallery",
         text: "Віртуальна галерея сучасного мистецтва з 3D-туром, можливістю купівлі робіт та інтеграцією відеоекскурсій."
@@ -84,14 +90,16 @@ const OurProjects = ({ translations }: TranslationProps) => {
             </h1>
             <div className='md:hidden'>
                 <div className="">
-
-                    <EmblaCarouselOurProjectsMobile slides={Slides} options={OPTIONS} />
+                    <EmblaCarouselOurProjectsMobile 
+                        slides={Slides} 
+                        options={OPTIONS} 
+                    />
                 </div>
             </div>
             <div className='flex z-30'>
                 <div className='flex-[50%]'>
                     <div
-                        className={`text-white transition-opacity ${fade ? 'opacity-0' : 'opacity-100'} duration-300 min-h-50`}
+                        className={`text-white transition-opacity ${fade ? 'opacity-0' : 'opacity-100'} duration-300 min-h-50 hidden md:block`}
                         style={{ transitionProperty: 'opacity' }}
                     >
                         <h2 className='mb-6 font-nunito text-2xl'>

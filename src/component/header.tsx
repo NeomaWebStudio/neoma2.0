@@ -25,7 +25,7 @@ export function Header({ translations }: HeaderProps) {
 						<button className='text-black w-full md:w-[311px] h-10 px-4 py-2 border border-[#FFA157] rounded-[24px] shadow-[inset_4px_4px_4px_0_rgba(255,255,255,0.25),inset_4px_4px_12px_0_rgba(255,255,255,0.1),inset_-4px_-4px_4px_0_rgba(0,0,0,0.15)] bg-[#FFA157] flex items-center justify-center'>{translations['contact_btn']}</button>
 					</div>
 				</div>
-				<Spline scene='https://prod.spline.design/iAnALJoO3-LokGfj/scene.splinecode' className="flex justify-center pointer-events-none scale-75 xs:scale-90 md:scale-65 lg:scale-75 xl:scale-90 overflow-visible! md:mt-[-120px]" />
+				<Spline scene='https://prod.spline.design/iAnALJoO3-LokGfj/scene.splinecode' className="flex justify-center pointer-events-none scale-75 xs:scale-90 md:scale-65 lg:scale-75 xl:scale-90 overflow-visible! md:mt-[-120px] md:ml-[-80px] lg:ml-0" />
 			</div>
 		</div>
 	);
