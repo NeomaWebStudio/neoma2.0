@@ -21,7 +21,8 @@ export const priceDataEN = [
 		buttonText: "Order",
 		buttonLink: "#",
 		buyIcon:	buy,
-		height: 'h-[436px]'
+		height: 'h-[436px]',
+		gridArea: "basic"
 	},
 	{
 		id:2,
@@ -39,7 +40,8 @@ export const priceDataEN = [
 		buttonText: "Order",
 		buttonLink: "#",
 		buyIcon:	buy,
-		height: 'h-[436px]'
+		height: 'h-[436px]',
+		gridArea: "standart"
 	},
 	{
 		id:3,
@@ -58,7 +60,8 @@ export const priceDataEN = [
 		buttonText: "Order",
 		buttonLink: "#",
 		buyIcon:	buy,
-		height: 'h-[436px]'
+		height: 'h-[436px]',
+		gridArea: "premium"
 	},
 	{
 		id:4,
@@ -73,7 +76,8 @@ export const priceDataEN = [
 		buttonText: "Order",
 		buttonLink: "#",
 		buyIcon:	buy,
-		height: 'h-[368px]'
+		height: 'h-[368px]',
+		gridArea: "brending"
 	},
 	{
 		id:5,
@@ -89,7 +93,8 @@ export const priceDataEN = [
 		buttonText: "Order",
 		buttonLink: "#",
 		buyIcon:	buy,
-		height: 'h-[368px]'
+		height: 'h-[368px]',
+		gridArea: "tg"
 	},
 	{
 		id:6,
@@ -105,7 +110,8 @@ export const priceDataEN = [
 		buttonText: "Order",
 		buttonLink: "#",
 		buyIcon:	buy,
-		height: 'h-[368px]'
+		height: 'h-[368px]',
+		gridArea: "support"
 	},
 	
 ]

@@ -14,6 +14,8 @@ import {
 } from '@/component/EmblaCarousel/EmblaCarouselArrowButtons';
 import { DotButton, useDotButton } from '@/component/EmblaCarousel/EmblaCarouselDotButtons';
 import useEmblaCarousel from 'embla-carousel-react';
+import FeedbackCard from '../feedback-card';
+import EmblaCarouselCard from './EmblaCarouselCard';
 
 const TWEEN_FACTOR_BASE = 0.52
 
@@ -24,22 +26,49 @@ type PropType = {
     // slides: number[]
     // options?: EmblaOptionsType
     // @ts-ignore
-    triggerAnimation?: CallbackType
+    triggerAnimation?: CallbackType,
+    onSlideChange?: (index: number) => void
 }
 
-const SlideImages = [
-    '/assets/images/random-img-1.jpg',
-    '/assets/images/random-img-2.jpg',
-    '/assets/images/random-img-3.jpg',
-    '/assets/images/random-img-4.jpg',
-    '/assets/images/random-img-5.jpg'
+export const SlideImages = [
+
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-1.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-2.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-3.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-4.jpg',
+    },
+    {
+        title: "TimeCrafters",
+        text: "Проєкт розробки односторінкового сайту для бренду елітних годинників. Основна задача полягала у створенні стильного та водночас функціонального лендінгу, який підкреслює преміальність продукту та формує відчуття цінності часу.",
+        src: '/assets/images/random-img-5.jpg',
+    }
+    // '/assets/images/random-img-1.jpg',
+    // '/assets/images/random-img-2.jpg',
+    // '/assets/images/random-img-3.jpg',
+    // '/assets/images/random-img-4.jpg',
+    // '/assets/images/random-img-5.jpg'
 ]
 
 const OPTIONS: EmblaOptionsType = { loop: true }
 const SLIDE_COUNT = 5
 const Slides = Array.from(Array(SLIDE_COUNT).keys())
 
-const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
+const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) => {
     // const { slides, options } = props
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
@@ -109,6 +138,24 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
     )
 
     useEffect(() => {
+        if (!emblaApi) return;
+
+        const onSelect = () => {
+            if (onSlideChange) {
+                onSlideChange(emblaApi.selectedScrollSnap());
+            }
+        };
+
+        emblaApi.on('select', onSelect);
+        // Call once on mount
+        onSelect();
+
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
+    }, [emblaApi, onSlideChange]);
+
+    useEffect(() => {
         if (!emblaApi) return
 
         setTweenNodes(emblaApi)
@@ -145,7 +192,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
                                     height={600}
                                     alt={`Slide ${index + 1}`}
                                     className="embla__slide__img"
-                                    src={SlideImages[index]}
+                                    src={SlideImages[index].src}
                                     priority
                                 />
                             </div>
@@ -153,13 +200,34 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
                     ))}
                 </div>
             </div>
+{/* 
+            <div className="md:hidden embla__viewport" ref={emblaRef}>
+                <div className="embla__container-feedback">
+                    {Slides.map((index) => (
+                        <div className="embla__slide" key={index}>
+                            <div>
+                                <Image
+                                    width={400}
+                                    height={900}
+                                    alt={`Slide ${index + 1}`}
+                                    className="embla__slide__img"
+                                    src={SlideImages[index].src}
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div> */}
 
             <div className="embla__controls">
-                <PrevButton onClick={() => {
-                    onPrevButtonClick() 
-                    throttledTriggerAnimation()
-                }}
-                    disabled={prevBtnDisabled} />
+                <PrevButton
+                    onClick={() => {
+                        onPrevButtonClick()
+                        throttledTriggerAnimation()
+                    }}
+                    disabled={prevBtnDisabled}
+                />
 
                 <div className="embla__dots">
                     {scrollSnaps.map((_, index) => (
@@ -173,10 +241,13 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation }) => {
                     ))}
                 </div>
 
-                <NextButton onClick={() => {
-                    onNextButtonClick()
-                    throttledTriggerAnimation()
-                }} disabled={nextBtnDisabled} />
+                <NextButton
+                    onClick={() => {
+                        onNextButtonClick()
+                        throttledTriggerAnimation()
+                    }}
+                    disabled={nextBtnDisabled}
+                />
 
             </div>
         </div>

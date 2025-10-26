@@ -14,10 +14,10 @@ const MenuItemsList = ({ translations }: HeaderProps) => {
   const menuItems = Object.values(translations?.menu || {});
 
   return (
-    <div className="w-[879px] h-7 flex flex-row justify-center items-center mr-6 text-white">
-      <ul className="flex gap-6">
+    <div className="flex justify-center items-center text-white xs:px-[18px]">
+      <ul className="flex flex-wrap md:gap-6 justify-between">
         {menuItems.map((item) => (
-          <li key={item}>
+          <li key={item} className='w-1/2 md:w-auto mb-6 md:mb-0 justify-start'>
             <button
               onClick={() => setActive(item)}
               className={`

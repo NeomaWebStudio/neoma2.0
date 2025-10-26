@@ -30,7 +30,7 @@ export default async function Home({ params }: PageProps) {
   }
   return (
     <div>
-      <main className="min-h-screen max-w-[1440px] px-18 mx-auto">
+      <main className="min-h-screen max-w-[1440px] px-[18px] xs:px-[30px] md:px-18 mx-auto">
       <Header  translations={translations} />
       <ExperienceInfo translations={translations}/>
 						<About translations={translations}/>
@@ -39,7 +39,7 @@ export default async function Home({ params }: PageProps) {
             <FeedbackSection translations={translations} locale={locale}/>
 						<Faq translations={translations}/>
 						<FeedbackForm translations={translations}/>
-    </main>
+      </main>
       <Footer translations={translations}/>
     </div>
   );
