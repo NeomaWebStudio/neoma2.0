@@ -12,6 +12,13 @@ type PropType = {
 
 const EmblaCarouselOurProjectsMobile: React.FC<PropType> = (props) => {
     const { slides, options } = props
+    const ourProjectsSlides = [
+        'Frame 334.png', 
+        'https://picsum.photos/600/950?v=1', 
+        'https://picsum.photos/600/950?v=2', 
+        'https://picsum.photos/600/950?v=3', 
+        'https://picsum.photos/600/950?v=4'
+    ]
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade()])
     const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -31,7 +38,7 @@ const EmblaCarouselOurProjectsMobile: React.FC<PropType> = (props) => {
                             <div
                                 className="embla__slide__img w-full h-[600px] bg-cover bg-center bg-no-repeat"
                                 style={{
-                                    backgroundImage: `url(https://picsum.photos/600/950?v=${index})`,
+                                    backgroundImage: `url('${ourProjectsSlides[index]}')`,
                                     width: '100vw',
                                     marginLeft: 'calc(-50vw + 50%)',
                                     marginRight: 'calc(-50vw + 50%)'

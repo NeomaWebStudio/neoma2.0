@@ -189,6 +189,9 @@ a {
 	.embla__button {
 		display: none;
 	}
+	.embla__button-prev, .embla__button-next {
+		display: flex;
+	}
 }
 
 .embla__button__svg {
