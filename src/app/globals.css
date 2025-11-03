@@ -186,9 +186,7 @@ a {
 }
 
 @media (max-width: 480px) {
-	.embla__button {
-		display: none;
-	}
+
 	.embla__button-prev, .embla__button-next {
 		display: flex;
 	}
