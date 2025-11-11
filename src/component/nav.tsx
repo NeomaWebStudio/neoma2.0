@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from 'next/image';
 
 import MenuItemsList from './MenuItemsList';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface TranslationProps {
   translations: Record<string, string>;
@@ -23,7 +24,7 @@ const Nav = ({ translations }: TranslationProps) => {
     <>
       <div className="flex flex-row items-center justify-between h-22 bg-[#05040D] text-white  sticky font-kurale" >
         <div className='xs:order-2 xs:mx-auto 2xl:order-none 2xl:mx-0'>
-          <img src="/logo.svg" alt="Логотип"/>
+          <img src="/logo.svg" alt="Логотип" />
         </div>
 
         <div className='hidden 2xl:block'>
@@ -31,12 +32,7 @@ const Nav = ({ translations }: TranslationProps) => {
         </div>
 
         <div className="hidden 2xl:flex flex-row justify-center items-center gap-2">
-          <p>En</p>
-          <img
-            src="/assets/icon/nav-arrow-down.svg"
-            alt="navArrowDown"
-            className="w-6 h-6"
-          />
+          <LanguageSwitcher />
         </div>
 
         <button
@@ -85,12 +81,7 @@ const Nav = ({ translations }: TranslationProps) => {
           {/* Menu Footer */}
           <div className="p-6 border-t border-gray-700">
             <div className="flex items-center gap-2 mb-4">
-              <p className="text-white">En</p>
-              <img
-                src="/assets/icon/nav-arrow-down.svg"
-                alt="navArrowDown"
-                className="w-4 h-4"
-              />
+              <LanguageSwitcher position='top' />
             </div>
             <button className="w-full text-black bg-[#FFA157] cursor-pointer h-10 rounded-[24px] text-center 
             shadow-[inset_4px_4px_0_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15)] 

@@ -26,7 +26,7 @@ const MenuItemsList = ({ translations }: HeaderProps) => {
                 after:bg-gradient-to-r after:from-[#1298FF] after:to-[#A93CFF]
                 after:scale-x-0 after:origin-left after:transition-transform after:duration-500 after:ease-in-out 
                 ${active === item ? "after:scale-x-100 text-[#A463B2]" : ""}
-                hover:after:scale-x-100 hover:text-[#EA8DFF] 
+                hover:after:scale-x-100 hover:text-[#EA8DFF] hover:transition-all hover:duration-300 
               `}
             >
               {item}
