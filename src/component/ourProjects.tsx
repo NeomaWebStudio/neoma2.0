@@ -84,49 +84,55 @@ const OurProjects = ({ translations }: TranslationProps) => {
     };
 
     return (
-        <section className='mb-44'>
-            <h1 className='text-white font-nunito text-[28px] md:text-5xl mt-12 mb-10 text-center'>
-                {translations["our_projects"]}
-            </h1>
-            <div className='md:hidden'>
-                <div className="">
-                    <EmblaCarouselOurProjectsMobile 
-                        slides={Slides} 
-                        options={OPTIONS} 
-                    />
-                </div>
-            </div>
-            <div className='flex z-30'>
-                <div className='flex-[50%]'>
-                    <div
-                        className={`text-white transition-opacity ${fade ? 'opacity-0' : 'opacity-100'} duration-300 min-h-50 hidden md:block`}
-                        style={{ transitionProperty: 'opacity' }}
-                    >
-                        <h2 className='mb-6 font-nunito text-2xl'>
-                            {SlideDescriptions[selectedIndex].title}
-                        </h2>
-                        <p className='text-base font-merriweather'>
-                            {SlideDescriptions[selectedIndex].text}
-                        </p>
-                    </div>
-                    <div className='hidden md:block'>
-                        <EmblaCarousel
-                            triggerAnimation={triggerAnimation}
-                            onSlideChange={onSlideChange}
-                        />
-                    </div>
-                </div>
-                <div className='hidden relative flex-[50%] xl:flex justify-center items-center 
-                after:content-[""] after:absolute after:top-1/2  after:-translate-y-1/2 after:left-10 
-                after:w-[138px] after:h-[80px] after:bg-[#05040D]'>
-                    <Spline
-                        scene='https://prod.spline.design/2-WT6wQTY0UGXc6z/scene.splinecode'
-                        onLoad={onLoad}
-                    />
-                </div>
+        <section className="mb-44">
+  <h1 className="text-white font-nunito text-[28px] md:text-5xl mt-12 mb-10 text-center">
+    {translations["our_projects"]}
+  </h1>
 
-            </div>
-        </section>
+  {/* Мобільна версія */}
+  <div className="md:hidden">
+    <EmblaCarouselOurProjectsMobile 
+      slides={Slides} 
+      options={OPTIONS} 
+    />
+  </div>
+
+  {/* Десктопна версія */}
+  <div className="flex z-30 items-center">
+    {/* Ліва частина з текстом і слайдером */}
+    <div className="hidden xl:flex xl:flex-col xl:flex-[50%]">
+        <div
+            className={`text-white transition-opacity ${
+            fade ? 'opacity-0' : 'opacity-100'
+            } duration-300 min-h-50 xl:block`}
+            style={{ transitionProperty: 'opacity' }}
+        >
+            <h2 className="mb-6 font-nunito text-2xl">
+            {SlideDescriptions[selectedIndex].title}
+            </h2>
+            <p className="text-base font-merriweather">
+            {SlideDescriptions[selectedIndex].text}
+            </p>
+        </div>
+
+        <div className="mt-4">
+            <EmblaCarousel
+            triggerAnimation={triggerAnimation}
+            onSlideChange={onSlideChange}
+            />
+        </div>
+    </div>
+
+    {/* Права частина зі Spline */}
+    <div className="hidden md:!flex md:flex-[50%] justify-center items-center">
+      <Spline
+        scene="https://prod.spline.design/2-WT6wQTY0UGXc6z/scene.splinecode"
+        onLoad={onLoad}
+      />
+    </div>
+  </div>
+</section>
+
     );
 };
 
