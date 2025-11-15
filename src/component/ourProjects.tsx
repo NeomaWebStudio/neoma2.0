@@ -64,14 +64,35 @@ const OurProjects = ({ translations }: TranslationProps) => {
       
     };
 
+    function traverse(obj: any, depth = 0) {
+        console.log("  ".repeat(depth) + obj.name, obj.material ? "🎨 has material" : "");
+        if (obj.children) obj.children.forEach((child: any) => traverse(child, depth + 1));
+    }
+
+    
     // Функція, яка виконується після завантаження сцени
     const onLoad = (splineApp: any) => {
         splineRef.current = splineApp;
-        const objects = splineRef.current.children; // all objects in scene
-        console.log(objects);
+        console.log('🚀 ~  splineRef.current:',  splineRef.current);
+        // const objects = splineRef.current.children; // all objects in scene
+        // console.log(objects);
         // splineApp.children?.forEach(obj => {
-        //     console.log(obj.name, obj.userData);
-        // });
+            //     console.log(obj.name, obj.userData);
+            // });
+            const laptop = splineApp.findObjectByName('Laptop');
+            console.log('laptop', laptop);
+        // 🔍 Check if the laptop has children
+        if (laptop.children && laptop.children.length > 0) {
+            laptop.children.forEach((child: any) => {
+                console.log("Child:", child.name, child.type);
+
+                if (child.material) {
+                    console.log("🎨 Material:", child.material);
+                }
+            });
+        } else {
+            console.log("Laptop has no children (might be a container only)");
+        }
     };
     
     // Тригер анімації, перевіряємо, що сцена завантажена
@@ -116,11 +137,9 @@ const OurProjects = ({ translations }: TranslationProps) => {
                         />
                     </div>
                 </div>
-                <div className='hidden relative flex-[50%] xl:flex justify-center items-center 
-                after:content-[""] after:absolute after:top-1/2  after:-translate-y-1/2 after:left-10 
-                after:w-[138px] after:h-[80px] after:bg-[#05040D]'>
+                <div className='hidden relative flex-[50%] xl:flex justify-center items-center'>
                     <Spline
-                        scene='https://prod.spline.design/2-WT6wQTY0UGXc6z/scene.splinecode'
+                        scene='/tablet_new.splinecode'
                         onLoad={onLoad}
                     />
                 </div>
