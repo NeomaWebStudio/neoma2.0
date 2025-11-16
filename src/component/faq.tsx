@@ -62,7 +62,7 @@ export default function Faq({ translations }: TranslationProps) {
 
         <div
           id="accordion"
-          className=" text-white flex flex-col gap-3 mt-10"
+          className="text-white flex flex-col gap-3 mt-10 w-full max-w-[600px] break-words"
         >
           <details className="text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)]">
             <summary className="list-none cursor-pointer">
@@ -83,10 +83,13 @@ export default function Faq({ translations }: TranslationProps) {
           </details>
           {items.map((it, idx) => (
             <details
-              key={idx}
-              open={openIndex === idx}
-              className="text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)] transition-all duration-300 ease-in-out"
-            >
+  key={idx}
+  open={openIndex === idx}
+  className="text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl 
+  shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)] 
+  transition-all duration-300 ease-in-out 
+  w-full max-w-[600px] break-words overflow-x-hidden"
+>
               <summary
                 className="list-none cursor-pointer select-none"
                 onClick={(e) => {
@@ -104,9 +107,11 @@ export default function Faq({ translations }: TranslationProps) {
               </summary>
 
               <div
-                className={`text-[16px] mt-4 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                className={`text-[16px] mt-4 overflow-hidden transition-all duration-300 ease-in-out break-words whitespace-normal overflow-x-hidden ${
+                  openIndex === idx ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                }`}
               >
+
                 {/* Якщо відповідь — об'єкт із текстом і списком */}
                 {typeof it.a === "object" && !Array.isArray(it.a) ? (
                   <div>
