@@ -22,7 +22,7 @@ const Nav = ({ translations }: TranslationProps) => {
 
   return (
     <>
-      <div className="flex flex-row items-center justify-between h-22 bg-[#05040D] text-white  sticky font-kurale" >
+      <div className="flex flex-row items-center justify-between h-22 text-white sticky font-kurale" >
         <div className='xs:order-2 xs:mx-auto 2xl:order-none 2xl:mx-0'>
           <img src="/logo.svg" alt="Логотип" />
         </div>

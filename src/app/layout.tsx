@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Kurale, Geist_Mono, Nunito, Merriweather } from "next/font/google";
+import { NeatGradientComp } from "@/component/neat-gradient";
 import "./globals.css";
 
 const kurale = Kurale({
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${kurale} ${geistMono.variable} ${nunito.className} ${merriweather.className} antialiased`}
       >
+        <NeatGradientComp />
         {children}
       </body>
     </html>
