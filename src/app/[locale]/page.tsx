@@ -17,7 +17,7 @@ interface PageProps {
 }
 
 export default async function Home({ params }: PageProps) {
-  const { locale } = params;
+  const { locale } = await params;
   // Підвантаження перекладів
   const filePath = path.join(process.cwd(), 'translation', `${locale}.json`);
   let translations: Record<string, string> = {};
@@ -31,16 +31,16 @@ export default async function Home({ params }: PageProps) {
   return (
     <div>
       <main className="min-h-screen max-w-[1440px] px-[18px] xs:px-[30px] md:px-18 mx-auto">
-      <Header  translations={translations} />
-      <ExperienceInfo translations={translations}/>
-						<About translations={translations}/>
-						<Price translations={translations} locale={locale}/>
-            <OurProjects translations={translations}/> 
-            <FeedbackSection translations={translations} locale={locale}/>
-						<Faq translations={translations}/>
-						<FeedbackForm translations={translations}/>
+        <Header translations={translations} />
+        <ExperienceInfo translations={translations} />
+        <About translations={translations} />
+        <Price translations={translations} locale={locale} />
+        <OurProjects translations={translations} />
+        <FeedbackSection translations={translations} locale={locale} />
+        <Faq translations={translations} />
+        <FeedbackForm translations={translations} />
       </main>
-      <Footer translations={translations}/>
+      <Footer translations={translations} />
     </div>
   );
 }

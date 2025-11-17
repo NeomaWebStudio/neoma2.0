@@ -24,7 +24,6 @@ const EmblaCarouselFeedback: React.FC<PropType> = (props) => {
         onPrevButtonClick,
         onNextButtonClick
     } = usePrevNextButtons(emblaApi)
-        console.log('🚀 ~ prevBtnDisabled:', prevBtnDisabled);
 
     return (
         <section className="embla">
