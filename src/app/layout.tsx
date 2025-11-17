@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Kurale, Geist_Mono, Nunito, Merriweather } from "next/font/google";
+import { NeatGradientComp } from "@/component/neat-gradient";
 import "./globals.css";
 import AnimatedWaves from '@/component/animatedWaves';
 
@@ -39,7 +40,8 @@ export default function RootLayout({
       <body
         className={`relative ${kurale} ${geistMono.variable} ${nunito.className} ${merriweather.className} antialiased`}
       >
-        <AnimatedWaves />
+        <NeatGradientComp />
+        {/* <AnimatedWaves /> */}
         {children}
       </body>
     </html>

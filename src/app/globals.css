@@ -24,6 +24,10 @@ body {
 	overflow-y: auto;
 }
 
+.bg-color {
+	background-color: var(--Background);
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }
@@ -303,3 +307,4 @@ a {
 			/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
 	}
 }
+
