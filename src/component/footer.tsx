@@ -8,7 +8,8 @@ interface TranslationProps {
 const Footer = ({ translations }: TranslationProps) => {
 
 	return (
-		<div>
+		<div className="relative">
+			<div className='absolute block bottom-0 right-0 w-20 h-10 bg-[#0A0819] z-[2147483647]'></div>
 			{/* Десктоп і планшет */}
 			<div className="hidden md:flex w-full h-[284px] bg-[#0A0819] justify-center">
 				<div className="mt-[40px]">
