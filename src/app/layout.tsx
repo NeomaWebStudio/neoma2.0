@@ -3,6 +3,8 @@ import { Kurale, Geist_Mono, Nunito, Merriweather } from "next/font/google";
 import { NeatGradientComp } from "@/component/neat-gradient";
 import "./globals.css";
 import AnimatedWaves from '@/component/animatedWaves';
+import AOSInit from "@/component/aos-init";
+import "aos/dist/aos.css";
 
 const kurale = Kurale({
   subsets: ["latin", "cyrillic"],
@@ -40,8 +42,10 @@ export default function RootLayout({
       <body
         className={`relative ${kurale} ${geistMono.variable} ${nunito.className} ${merriweather.className} antialiased`}
       >
+        <AOSInit />
         <NeatGradientComp />
         {/* <AnimatedWaves /> */}
+
         {children}
       </body>
     </html>
