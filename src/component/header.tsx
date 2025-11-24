@@ -16,7 +16,7 @@ export function Header({ translations }: HeaderProps) {
 	const locale = params?.locale ?? 'uk';
 
 	return (
-		<div id='home' className='xl:h-screen mb:12 md:mb-24 flex flex-col'>
+		<div className='xl:h-screen mb-24'>
 			<Nav translations={translations} />
 			<div className='flex gap-6 mt-12 xl:mt-40'>
 				<div className='md:w-[55%] aos-desktop-only'

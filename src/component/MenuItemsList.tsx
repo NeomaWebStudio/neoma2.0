@@ -12,9 +12,13 @@ const MenuItemsList = ({ translations }: MenuTranslationProps) => {
   return (
     <div className="flex justify-center items-center text-white xs:px-[18px]">
       <ul className="flex flex-wrap md:gap-6 justify-between">
-        {menuItems.map(({menuItem, id}) => {
+        {menuItems.map(({menuItem, id}, i) => {
           return (
-            <li key={uuidv4()} className='w-1/2 md:w-auto mb-6 md:mb-0 justify-start'>
+            <li key={uuidv4()} className='w-1/2 md:w-auto mb-6 md:mb-0 justify-start aos-desktop-only'
+              data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration={500 + i * 300}
+            >
               <Link
                 to={id}
                 smooth={true}
