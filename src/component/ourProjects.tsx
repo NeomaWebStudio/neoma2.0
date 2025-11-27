@@ -52,49 +52,24 @@ const Slides = Array.from(Array(SLIDE_COUNT).keys())
 const OurProjects = ({ translations }: TranslationProps) => {
     const splineRef = useRef<any>(null);
     //   const feedbackDataLocalized = locale === 'en' ? feedbackDataEN : feedbackData;
-    
+
 
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [fade, setFade] = useState(false);
 
     const onSlideChange = (index: number) => {
         setFade(true);
-            setSelectedIndex(index);
-            setFade(false);
-      
+        setSelectedIndex(index);
+        setFade(false);
+
     };
 
-    function traverse(obj: any, depth = 0) {
-        console.log("  ".repeat(depth) + obj.name, obj.material ? "🎨 has material" : "");
-        if (obj.children) obj.children.forEach((child: any) => traverse(child, depth + 1));
-    }
 
-    
     // Функція, яка виконується після завантаження сцени
     const onLoad = (splineApp: any) => {
         splineRef.current = splineApp;
-        console.log('🚀 ~  splineRef.current:',  splineRef.current);
-        // const objects = splineRef.current.children; // all objects in scene
-        // console.log(objects);
-        // splineApp.children?.forEach(obj => {
-            //     console.log(obj.name, obj.userData);
-            // });
-            const laptop = splineApp.findObjectByName('Laptop');
-            console.log('laptop', laptop);
-        // 🔍 Check if the laptop has children
-        if (laptop.children && laptop.children.length > 0) {
-            laptop.children.forEach((child: any) => {
-                console.log("Child:", child.name, child.type);
-
-                if (child.material) {
-                    console.log("🎨 Material:", child.material);
-                }
-            });
-        } else {
-            console.log("Laptop has no children (might be a container only)");
-        }
     };
-    
+
     // Тригер анімації, перевіряємо, що сцена завантажена
     const triggerAnimation = () => {
         if (splineRef.current) {
@@ -105,54 +80,53 @@ const OurProjects = ({ translations }: TranslationProps) => {
     };
 
     return (
-        <section className="mb-44">
-  <h1 className="text-white font-nunito text-[28px] md:text-5xl mt-12 mb-10 text-center">
-    {translations["our_projects"]}
-  </h1>
+        <section id='portfolio' className="mb-44">
+            <h1 className="text-white font-nunito text-[28px] md:text-5xl mt-12 mb-10 text-center">
+                {translations["our_projects"]}
+            </h1>
 
-  {/* Мобільна версія */}
-  <div className="md:hidden">
-    <EmblaCarouselOurProjectsMobile 
-      slides={Slides} 
-      options={OPTIONS} 
-    />
-  </div>
+            {/* Мобільна версія */}
+            <div className="md:hidden">
+                <EmblaCarouselOurProjectsMobile
+                    slides={Slides}
+                    options={OPTIONS}
+                />
+            </div>
 
-  {/* Десктопна версія */}
-  <div className="flex z-30 items-center">
-    {/* Ліва частина з текстом і слайдером */}
-    <div className="hidden xl:flex xl:flex-col xl:flex-[50%]">
-        <div
-            className={`text-white transition-opacity ${
-            fade ? 'opacity-0' : 'opacity-100'
-            } duration-300 min-h-50 xl:block`}
-            style={{ transitionProperty: 'opacity' }}
-        >
-            <h2 className="mb-6 font-nunito text-2xl">
-            {SlideDescriptions[selectedIndex].title}
-            </h2>
-            <p className="text-base font-merriweather">
-            {SlideDescriptions[selectedIndex].text}
-            </p>
-        </div>
+            {/* Десктопна версія */}
+            <div className="flex z-30 items-center">
+                {/* Ліва частина з текстом і слайдером */}
+                <div className="hidden xl:flex xl:flex-col xl:flex-[50%]">
+                    <div
+                        className={`text-white transition-opacity ${fade ? 'opacity-0' : 'opacity-100'
+                            } duration-300 min-h-50 xl:block`}
+                        style={{ transitionProperty: 'opacity' }}
+                    >
+                        <h2 className="mb-6 font-nunito text-2xl">
+                            {SlideDescriptions[selectedIndex].title}
+                        </h2>
+                        <p className="text-base font-merriweather">
+                            {SlideDescriptions[selectedIndex].text}
+                        </p>
+                    </div>
 
-        <div className="mt-4">
-            <EmblaCarousel
-            triggerAnimation={triggerAnimation}
-            onSlideChange={onSlideChange}
-            />
-        </div>
-    </div>
+                    <div className="mt-4">
+                        <EmblaCarousel
+                            triggerAnimation={triggerAnimation}
+                            onSlideChange={onSlideChange}
+                        />
+                    </div>
+                </div>
 
-    {/* Права частина зі Spline */}
-    <div className="hidden md:!flex md:flex-[50%] justify-center items-center">
-      <Spline
-        scene='/tablet_new.splinecode'
-        onLoad={onLoad}
-      />
-    </div>
-  </div>
-</section>
+                {/* Права частина зі Spline */}
+                <div className="hidden md:!flex md:flex-[50%] justify-center items-center">
+                    <Spline
+                        scene='/tablet_new.splinecode'
+                        onLoad={onLoad}
+                    />
+                </div>
+            </div>
+        </section>
 
     );
 };

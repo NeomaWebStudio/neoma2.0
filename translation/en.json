@@ -1,22 +1,43 @@
 {
   "main_block_title": "Digital solutions that attract clients",
   "main_block_description": "Every feature is designed for your brand’s efficiency and growth",
-  "menu": {
-    "menu1": "Home",
-    "menu2": "About",
-    "menu3": "Pricing&Services",
-    "menu4": "Portfoliio",
-    "menu5": "Testimonials",
-    "menu6": "FAQ",
-    "menu7": "Contacts"
-  },
+  "menu": [
+    {
+      "menu": "Home",
+      "id": "home"
+    },
+    {
+      "menu": "About",
+      "id": "about"
+    },
+    {
+      "menu": "Pricing & Services",
+      "id": "prices"
+    },
+    {
+      "menu": "Portfolio",
+      "id": "portfolio"
+    },
+    {
+      "menu": "Testimonials",
+      "id": "testimonials"
+    },
+    {
+      "menu": "FAQ",
+      "id": "faq"
+    },
+    {
+      "menu": "Contacts",
+      "id": "contact"
+    }
+  ],
   "contacts": "Contacts",
   "contacts_text_1": "Find us on messengers and social media:",
   "contacts_text_2": "Submit a request, and we’ll propose the best solution for you",
   "contact_btn": "Let's Talk",
   "contact_btn_short": "Let's Talk",
   "our_projects": "Our projects",
-  "our_projects_text": "Development of a one-page website for a luxury watch brand.  The main goal was to create a stylish yet functional landing page that emphasizes the product’s premium quality and conveys a sense of the value of time.<br>The design follows a minimalist approach: a high-contrast color palette (black background with gold accents), clear typography, and prominent visual highlights on the products. The hero section is focused on first impressions — featuring a striking slogan, a high-quality watch image, and a CTA button.",
+  "our_projects_text": "Development of a one-page website for a luxury watch brand. The main goal was to create a stylish yet functional landing page that emphasizes the product’s premium quality and conveys a sense of the value of time.<br>The design follows a minimalist approach: a high-contrast color palette (black background with gold accents), clear typography, and prominent visual highlights on the products. The hero section is focused on first impressions — featuring a striking slogan, a high-quality watch image, and a CTA button.",
   "completed_projects": "Completed Projects",
   "years_experience": "Years of experience",
   "satisfied_customers": "Satisfied customers",

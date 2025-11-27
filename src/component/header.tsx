@@ -25,7 +25,7 @@ export function Header({ translations }: HeaderProps) {
 	// }, []);
 
 	return (
-		<div className='xl:h-screen mb:12 md:mb-24 flex flex-col'>
+		<div id='home' className='xl:h-screen mb:12 md:mb-24 flex flex-col'>
 			<Nav translations={translations} />
 			<div className='flex flex-col md:flex-row gap-6 mt-12 xl:mt-40'>
 				<div className='md:w-2/3 lg:w-1/2'>
