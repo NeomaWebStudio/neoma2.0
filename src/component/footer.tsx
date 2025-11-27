@@ -1,14 +1,11 @@
 import React from 'react';
 import MenuItemsList from './MenuItemsList';
+import { MenuTranslationProps } from '@/utils/types';
 
-interface TranslationProps {
-  translations: Record<string, string>;
-}
-
-const Footer = ({ translations }: TranslationProps) => {
+const Footer = ({ translations }: MenuTranslationProps) => {
 
 	return (
-		<div>
+		<div id='footer'>
 			{/* Десктоп і планшет */}
 			<div className="hidden md:flex w-full h-[284px] bg-[#0A0819] justify-center">
 				<div className="mt-[40px]">

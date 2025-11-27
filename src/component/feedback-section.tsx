@@ -13,7 +13,7 @@ const OPTIONS: EmblaOptionsType = { align: 'start' }
 const FeedbackSection = ({ translations, locale }: TranslationProps) => {
   const feedbackDataLocalized = locale === 'en' ? feedbackDataEN : feedbackData;
   return (
-    <div className="mb-24">
+    <div id="testimonials" className="mb-24">
       <h3 className="text-[28px] text-center md:text-5xl text-white font-nanito mb-12">{translations['testimonials']}</h3>
       <EmblaCarouselFeedbackSection slides={feedbackDataLocalized} options={OPTIONS} />
     </div>
