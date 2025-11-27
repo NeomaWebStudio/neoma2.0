@@ -5,8 +5,7 @@ import { MenuTranslationProps } from '@/utils/types';
 const Footer = ({ translations }: MenuTranslationProps) => {
 
 	return (
-		<div className="relative">
-			<div className='absolute block bottom-0 right-0 w-20 h-10 bg-[#0A0819] z-[2147483647]'></div>
+		<div id='footer'>
 			{/* Десктоп і планшет */}
 			<div className="hidden md:flex w-full h-[284px] bg-[#0A0819] justify-center">
 				<div className="mt-[40px]">
