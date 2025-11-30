@@ -1,17 +1,14 @@
 "use client";
+import { MenuTranslationProps } from '@/utils/types';
 import { useState } from "react";
+import { Link } from "react-scroll";
+import { v4 as uuidv4 } from 'uuid';
 
-interface HeaderProps {
-  translations?: {
-    menu?: Record<string, string>;
-    [key: string]: any;
-  };
-}
 
-const MenuItemsList = ({ translations }: HeaderProps) => {
+const MenuItemsList = ({ translations }: MenuTranslationProps) => {
   const [active, setActive] = useState("Головна");
 
-  const menuItems = Object.values(translations?.menu || {});
+  const menuItems = translations?.menu || [];
 
   return (
     <div className="flex justify-center items-center text-white xs:px-[18px]">

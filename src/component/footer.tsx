@@ -1,11 +1,8 @@
 import React from 'react';
 import MenuItemsList from './MenuItemsList';
+import { MenuTranslationProps } from '@/utils/types';
 
-interface TranslationProps {
-  translations: Record<string, string>;
-}
-
-const Footer = ({ translations }: TranslationProps) => {
+const Footer = ({ translations }: MenuTranslationProps) => {
 
 	return (
 		<div className="relative">

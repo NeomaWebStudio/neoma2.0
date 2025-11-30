@@ -11,7 +11,7 @@ const Price = ({ translations, locale }: TranslationProps) => {
     const priceDataLocalized = locale === 'en' ? priceDataEN : priceData;   
 
     return (
-        <div className="flex flex-col items-center mb-24 w-full">
+        <div id='prices' className="flex flex-col items-center mb-24 w-full">
             <h3 className="text-white text-[28px] md:text-5xl font-nunito mb-12">{translations["prices_and_services"]}</h3>
             <p className="text-white text-[16px] md:w-[700px] lg:w-[760px] leading-6 ">
                 {translations["prices_and_services_text"]}

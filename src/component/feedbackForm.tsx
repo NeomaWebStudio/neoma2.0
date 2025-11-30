@@ -9,7 +9,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
 	return (
-		<div className='w-full text-white mb-24'>
+		<div id='contact' className='w-full text-white mb-24'>
 			<h2 className='font-nunito text-[28px] md:text-5xl text-white text-center mb-12'>{translations['contacts']}</h2>
 
 			<div className="feedback_form-container">
