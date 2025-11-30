@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { v4 as uuidv4 } from 'uuid';
 
-
 const MenuItemsList = ({ translations }: MenuTranslationProps) => {
   const [active, setActive] = useState("Головна");
 
