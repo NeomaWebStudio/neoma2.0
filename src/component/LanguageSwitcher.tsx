@@ -53,23 +53,30 @@ export default function LanguageSwitcher({ position = 'bottom' }: LanguageSwitch
             </div>
 
             {isOpen && (
-                <div className={`absolute right-0 bg-[#05040D] py-2 ${dropdownPosition}`}>
-                    <button
-                        onClick={() => switchLanguage('uk')}
-                        className={`block w-full px-4 py-2 text-left hover:bg-[#A93CFF]/20 ${currentLang === 'uk' ? 'text-[#A93CFF]' : 'text-white'
-                            }`}
-                    >
-                        Uk
-                    </button>
-                    <button
-                        onClick={() => switchLanguage('en')}
-                        className={`block w-full px-4 py-2 text-left hover:bg-[#A93CFF]/20 ${currentLang === 'en' ? 'text-[#A93CFF]' : 'text-white'
-                            }`}
-                    >
-                        En
-                    </button>
-                </div>
-            )}
+    <div
+        className={`absolute bg-transparent rounded-full p-1 cursor-pointer 
+            ${dropdownPosition} z-50`}
+    >
+        <div
+            onClick={() => switchLanguage('uk')}
+            className={`hover:bg-[#dec5f1] hover:text-white px-3 py-1 rounded-full text-sm font-medium transition-all
+                ${currentLang === 'uk' ? 'bg-[#A93CFF] text-white' : 'text-gray-300'}
+            `}
+        >
+            UK
+        </div>
+
+        <div
+            onClick={() => switchLanguage('en')}
+            className={`hover:bg-[#dec5f1] hover:text-white px-3 py-1 rounded-full text-sm font-medium transition-all
+                ${currentLang === 'en' ? 'bg-[#A93CFF] text-white' : 'text-gray-300'}
+            `}
+        >
+            EN
+        </div>
+    </div>
+)}
+
         </div>
     )
 }
