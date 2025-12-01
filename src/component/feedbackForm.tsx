@@ -261,7 +261,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 				</div>
 
 				<div className="" style={{ gridArea: "spline" }}>
-					<Spline scene="/robot_316_426.spline" className='flex w-full justify-center items-center' />
+					<Spline scene="/robot_camerax2.spline" className='flex w-full justify-center items-center' />
 				</div>
 			</div>
 		</div>
