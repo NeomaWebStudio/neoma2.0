@@ -3,31 +3,31 @@
   "main_block_description": "Every feature is designed for your brand’s efficiency and growth",
   "menu": [
     {
-      "menu": "Home",
+      "menuItem": "Home",
       "id": "home"
     },
     {
-      "menu": "About",
+      "menuItem": "About",
       "id": "about"
     },
     {
-      "menu": "Pricing & Services",
+      "menuItem": "Pricing & Services",
       "id": "prices"
     },
     {
-      "menu": "Portfolio",
+      "menuItem": "Portfolio",
       "id": "portfolio"
     },
     {
-      "menu": "Testimonials",
+      "menuItem": "Testimonials",
       "id": "testimonials"
     },
     {
-      "menu": "FAQ",
+      "menuItem": "FAQ",
       "id": "faq"
     },
     {
-      "menu": "Contacts",
+      "menuItem": "Contacts",
       "id": "contact"
     }
   ],
