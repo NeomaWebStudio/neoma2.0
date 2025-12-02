@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import MenuItemsList from './MenuItemsList';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Link } from 'react-scroll';
 
 interface TranslationProps {
   translations: Record<string, string>;
@@ -35,14 +36,19 @@ const Nav = ({ translations }: TranslationProps) => {
           <LanguageSwitcher />
         </div>
 
-        <button
-          className="hidden xs:block order-3 text-black bg-[#FFA157] cursor-pointer w-49 h-10 rounded-[24px] text-center 
+        <Link
+          to={'contact'}
+          smooth={true}
+          offset={-40}
+        >
+          <button className="hidden xs:block order-3 text-black bg-[#FFA157] cursor-pointer w-49 h-10 rounded-[24px] text-center 
              shadow-[inset_4px_4px_0_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15)] ml-6 
              hover:shadow-[inset_4px_4px_4px_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15),4px_4px_8px_4px_rgba(252,125,23,0.5)]
              transition-shadow duration-300 ease-in-out"
-        >
-          {translations['contact_btn_short']}
-        </button>
+          >
+            {translations['contact_btn_short']}
+          </button>
+        </Link>
 
         <div className='ml-auto xs:ml-0 xs:mr-auto xs:order-1 2xl:order-none 2xl:hidden'>
           <Image src={'/menu.png'} width={24} height={24} alt='menu-icon' className=" cursor-pointer"
