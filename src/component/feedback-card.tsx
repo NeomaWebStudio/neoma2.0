@@ -19,11 +19,12 @@ const FeedbackCard = ({ author, subTitle, feedbackText, image, authorImg }: Feed
         <div>{feedbackText}</div>
       </div>
 
-      <div className="hidden xl:block border rounded-xl border-[#A93CFF] w-76"
+      {/* <div className="hidden xl:block border rounded-xl border-[#A93CFF] w-76"
         style={{
           backgroundImage: image ? `url(${image})` : undefined, backgroundSize: 'cover', backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
-        }}></div>
+        }}>
+      </div> */}
     </div>
   )
 }
