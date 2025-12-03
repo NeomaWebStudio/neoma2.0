@@ -58,8 +58,11 @@ export default function Faq({ translations }: TranslationProps) {
     <div id='faq' className="mb-24">
       <h3 className="text-center text-[28px] md:text-5xl text-white font-nanito lg:mb-12">Faq</h3>
       <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
-        <div className="mt-[40px] md:mt-[150px]">
-          <Spline scene="/sphere.splinecode" className='flex justify-center items-center' />
+        <div className="mt-[40px] md:mt-[150px]" onWheel={(e) => {
+    // передаємо скрол сторінці
+    window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+  }}>
+          <Spline scene="/sphere.splinecode" className='flex justify-center items-center'/>
         </div>
 
         <div

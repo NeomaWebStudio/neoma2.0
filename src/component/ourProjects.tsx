@@ -119,12 +119,19 @@ const OurProjects = ({ translations }: TranslationProps) => {
                 </div>
 
                 {/* Права частина зі Spline */}
-                <div className="hidden md:!flex md:flex-[50%] justify-center items-center">
-                    <Spline
-                        scene='/tablet_new.splinecode'
-                        onLoad={onLoad}
-                    />
-                </div>
+                <div
+  className="hidden md:!flex md:flex-[50%] justify-center items-center"
+  onWheel={(e) => {
+    // передаємо скрол сторінці
+    window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+  }}
+>
+  <Spline
+    scene='/tablet_new.splinecode'
+    onLoad={onLoad}
+    ref={splineRef}
+  />
+</div>
             </div>
         </section>
 
