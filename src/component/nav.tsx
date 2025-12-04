@@ -40,6 +40,7 @@ const Nav = ({ translations }: TranslationProps) => {
           to={'contact'}
           smooth={true}
           offset={-40}
+          style={{ fontFamily: 'inherit' }}
         >
           <button className="hidden xs:block order-3 text-black bg-[#FFA157] cursor-pointer w-49 h-10 rounded-[24px] text-center 
              shadow-[inset_4px_4px_0_rgba(255,255,255,0.25),inset_4px_4px_12px_rgba(255,255,255,0.1),inset_-4px_-4px_4px_rgba(0,0,0,0.15)] ml-6 
