@@ -57,13 +57,13 @@ a {
 
 	--slide-height-fb: 19rem;
 	--slide-spacing-fb: 0.7rem;
-	--slide-size-fb: 100%;
-	--slide-spacing-sm-fb: 1rem;
-	--slide-size-sm-fb: 50%;
-	--slide-spacing-lg-fb: 2rem;
-	--slide-size-lg-fb: calc(100% / 3);
+    --slide-size-fb: 100%;             /* 1 per view on smallest screens */
+    --slide-size-sm-fb: 50%;           /* 2 per view at medium screens */
+    --slide-size-lg-fb: calc(100% / 3);/* 3 per view at large screens */
+    --slide-spacing-sm-fb: 1rem;
+    --slide-spacing-lg-fb: 2rem;
 
-	--detail-medium-contrast: rgb(25, 25, 25);
+    --detail-medium-contrast: rgb(25, 25, 25);
 }
 .embla-feedback {
 	padding: 1rem 0;
@@ -86,17 +86,6 @@ a {
 	margin-left: calc(var(--slide-spacing-fb) * -1);
 }
 
-@media (min-width: 750px) {
-	.embla__container {
-		margin-left: calc(var(--slide-spacing-sm) * -1);
-	}
-}
-@media (min-width: 1200px) {
-	.embla__container {
-		margin-left: calc(var(--slide-spacing-lg) * -1);
-	}
-}
-
 .embla__slide {
 	transform: translate3d(0, 0, 0);
 	flex: 0 0 var(--slide-size);
@@ -109,33 +98,29 @@ a {
 	flex: 0 0 var(--slide-size-fb);
 	padding-left: var(--slide-spacing-fb);
 }
+
+
 @media (min-width: 750px) {
-	.embla__slide-feedback {
-		flex: 0 0 var(--slide-size-sm-fb);
-		padding-left: var(--slide-spacing-sm-fb);
-	}
-}
-@media (max-width: 480px) {
-	.embla__slide {
-	transform: translate3d(0, 0, 0);
-	/* flex: 0 0 450px;
-	overflow: hidden; */
-	min-width: 0;
-	padding-left: var(--slide-spacing);
-}
-	.embla__slide-feedback {
-		/* flex: 0 0 var(--slide-size-sm-fb);
-		padding-left: var(--slide-spacing-sm-fb); */
-		padding-left: 25px;
-		padding-right: 25px;
-	}
-}
-/* @media (min-width: 1200px) {
-  .embla__slide-feedback {
-    flex: 0 0 var(--slide-size-lg-fb);
-    padding-left: var(--slide-spacing-lg-fb);
+  .embla {
+    --slide-size-fb: var(--slide-size-sm-fb); /* 2 per view */
+    --slide-spacing-fb: var(--slide-spacing-sm-fb);
   }
-} */
+}
+
+@media (min-width: 1200px) {
+  .embla {
+    --slide-size-fb: var(--slide-size-lg-fb); /* 3 per view */
+    --slide-spacing-fb: var(--slide-spacing-lg-fb);
+  }
+
+  .embla__slide-feedback {
+    flex: 0 0 var(--slide-size-fb);
+    padding-left: var(--slide-spacing-fb);
+  }
+}
+
+
+
 
 .embla__slide__img {
 	box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
