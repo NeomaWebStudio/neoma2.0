@@ -122,16 +122,15 @@ const OurProjects = ({ translations }: TranslationProps) => {
                 <div
   className="hidden md:!flex md:flex-[50%] justify-center items-center"
   onWheelCapture={(e) => {
-    // Дозволяємо сторінці скролитись нативно
-    // І НЕ заважаємо Spline отримувати pointer events
     e.stopPropagation();
   }}
 >
   <Spline
     scene="/tablet_new.splinecode"
-    ref={splineRef}
+    onLoad={(app) => (splineRef.current = app)}
   />
 </div>
+
             </div>
         </section>
 
