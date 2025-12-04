@@ -121,14 +121,14 @@ const OurProjects = ({ translations }: TranslationProps) => {
                 {/* Права частина зі Spline */}
                 <div
   className="hidden md:!flex md:flex-[50%] justify-center items-center"
-  onWheel={(e) => {
-    // передаємо скрол сторінці
-    window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+  onWheelCapture={(e) => {
+    // Дозволяємо сторінці скролитись нативно
+    // І НЕ заважаємо Spline отримувати pointer events
+    e.stopPropagation();
   }}
 >
   <Spline
-    scene='/tablet_new.splinecode'
-    onLoad={onLoad}
+    scene="/tablet_new.splinecode"
     ref={splineRef}
   />
 </div>
