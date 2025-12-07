@@ -118,7 +118,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 					<div className="w-full rounded-full transition-all duration-300
 					    focus-within:p-[2px] focus-within:bg-gradient-to-r focus-within:from-[#1298FF] focus-within:to-[#A93CFF]">
 
-						<div className="flex items-center w-full border border-orange-500 rounded-full px-4 py-3 bg-[#05040d]
+						<div className="flex items-center w-full border border-orange-500 rounded-full px-4 py-3 bg-[#0A081A]
 							focus-within:border-transparent
 							hover:border-[#FFC08F]
 							focus-within:[&>svg]:text-[#FFC08F]
@@ -150,7 +150,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 					<div className="relative w-full rounded-full transition-all duration-300
 					    focus-within:p-[2px] focus-within:bg-gradient-to-r focus-within:from-[#1298FF] focus-within:to-[#A93CFF]">
 
-						<div className="flex items-center w-full border border-orange-500 rounded-full px-4 py-3 bg-[#05040d]
+						<div className="flex items-center w-full border border-orange-500 rounded-full px-4 py-3 bg-[#0A081A]
 							focus-within:border-transparent
 							hover:border-[#FFC08F]
 							focus-within:[&>svg]:text-[#FFC08F]
@@ -192,7 +192,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 					<div className="relative w-full rounded-full transition-all duration-300
     				    focus-within:p-[2px] focus-within:bg-gradient-to-r focus-within:from-[#1298FF] focus-within:to-[#A93CFF]">
 
-						<div className="flex items-center w-full border border-orange-500 rounded-full px-4 py-3 bg-[#05040d]
+						<div className="flex items-center w-full border border-orange-500 rounded-full px-4 py-3 bg-[#0A081A]
     				      focus-within:border-transparent 
 						  focus-within:[&>svg]:text-[#FFC08F]
 						  hover:[&>svg]:text-[#FFC08F]
@@ -226,7 +226,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 					    focus-within:p-[2px] focus-within:bg-gradient-to-r 
 						focus-within:from-[#1298FF] focus-within:to-[#A93CFF] rounded-3xl">
 
-						<div className="flex items-center w-full border border-orange-500 px-4 py-3 bg-[#05040d]
+						<div className="flex items-center w-full border border-orange-500 px-4 py-3 bg-[#0A081A]
 							focus-within:border-transparent
 							hover:border-[#FFC08F]
 							focus-within:[&>svg]:text-[#FFC08F]
