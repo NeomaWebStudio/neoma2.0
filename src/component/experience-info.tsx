@@ -4,11 +4,11 @@ interface TranslationProps {
 
 const ExperienceInfo = ({ translations }: TranslationProps) => {
     const info = [{
-        title: '50+',
+        title: '30+',
         description: translations["completed_projects"],
     },
     {
-        title: '5+',
+        title: '3+',
         description: translations["years_experience"],
     },
     {

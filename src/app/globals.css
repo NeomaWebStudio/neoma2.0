@@ -14,11 +14,11 @@
 }
 
 body {
-	font-family: "Kurale", sans-serif;
-	/* font-size: 16px; */
-	/* font-weight: 400; */
-	/* line-height: 24px; */
-	/* color: black; */
+	font-family: "merriweather", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	color: black;
 	background-color: var(--Background);
 	overflow: hidden;
 	overflow-y: auto;
