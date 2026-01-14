@@ -86,7 +86,7 @@ const Price = ({ translations, locale }: TranslationProps) => {
                 {/* Button for buy packet */}
                 <div>
                   <button className='flex text-[#FFA157] gap-1 justify-center items-center text-[16px] ${merriweather.className}'>
-                    {translations['order']} <img src={buy} alt='' />
+                    {translations[item.buttonText]} <img src={buy} alt='' />
                   </button>
                 </div>
               </div>
