@@ -58,18 +58,18 @@ const Price = ({ translations, locale }: TranslationProps) => {
                 </div>
                 {/* The price name is in the middle of the circle card */}
                 <h2 className='text-white text-4xl absolute not-md:text-[20px] w-[280px] text-center '>
-                  {item.name}
+                  {translations[item.name]}
                 </h2>
               </div>
               <div className='flex flex-col gap-8 h-full justify-center not-md:text-[20px]'>
                 <h3 className='text-white text-2xl ${pacifico.className}'>
-                  {item.title}
+                  {translations[item.title]}
                 </h3>
                 {/* Price number */}
-                <div className='w-[172px] h-[32px] border border-[#A93CFF] py-[4px] px-2 rounded-lg  flex justify-center items-center shadow-[-2px_0_8px_0_rgb(169,60,255,0.1),2px_0_8px_0_rgb(169,60,255,0.1),0_-2px_8px_0_rgb(169,60,255,0.1),0_2px_8px_0_rgb(169,60,255,0.1)]'>
+                <div className='w-[192px] h-[32px] border border-[#A93CFF] py-[4px] px-2 rounded-lg  flex justify-center items-center shadow-[-2px_0_8px_0_rgb(169,60,255,0.1),2px_0_8px_0_rgb(169,60,255,0.1),0_-2px_8px_0_rgb(169,60,255,0.1),0_2px_8px_0_rgb(169,60,255,0.1)]'>
                   <p className='${merriweather.className} text-white text-center flex not-md:text-[16px] '>
                     <img className='w-6 h-6 mr-2.5' src={coins} alt='' />{' '}
-                    {item.price}
+                    {translations['from']} {item.price} {translations['uah']}
                   </p>
                 </div>
                 {/* Description price list */}
@@ -78,7 +78,7 @@ const Price = ({ translations, locale }: TranslationProps) => {
                     <div key={index}>
                       <div className='flex items-center gap-2'>
                         <img src={cursor} alt='' className='w-6 h-6' />
-                        <p className='text-white'>{feature}</p>
+                        <p className='text-white'>{translations[feature]}</p>
                       </div>
                     </div>
                   ))}
@@ -86,7 +86,7 @@ const Price = ({ translations, locale }: TranslationProps) => {
                 {/* Button for buy packet */}
                 <div>
                   <button className='flex text-[#FFA157] gap-1 justify-center items-center text-[16px] ${merriweather.className}'>
-                    Замовити <img src={buy} alt='' />
+                    {translations[item.buttonText]} <img src={buy} alt='' />
                   </button>
                 </div>
               </div>
