@@ -18,84 +18,92 @@ const Price = ({ translations, locale }: TranslationProps) => {
   const priceDataLocalized = locale === 'en' ? priceDataEN : priceData
 
   return (
-    /* Global container for price and description prices */
-    <div
-      id='prices'
-      className='flex flex-col items-center mb-24 w-full h-[4294px] '
-    >
-      {/* Title price */}
-      <h3 className='text-white text-[28px] md:text-5xl font-nunito mb-12'>
-        {translations['prices_and_services']}
-      </h3>
-      <p className='text-white text-[16px] md:w-[700px] lg:w-[760px] leading-6 '>
-        {translations['prices_and_services_text']}
-      </p>
-      {/* Container for prices card */}
+  <div
+    id="prices"
+    className="flex flex-col items-center w-full px-4 md:px-0 mb-24"
+  >
+    {/* Title */}
+    <h3 className="text-white text-2xl md:text-5xl font-nunito mb-6 text-center">
+      {translations['prices_and_services']}
+    </h3>
 
-      <div className='flex flex-col items-center gap-8 relative'>
-        {priceData.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className={`w-[1296px] h-[636px] flex justify-between  ${item.id % 2 === 0 ? 'flex-row-reverse' : ''}  not-md:w-[684px] not-md:h-[468px] mt-8 `}
-            >
-              {/* Container img circle price in card */}
-              <div className='relative flex justify-center items-center w-[636px] h-[636px] '>
-                {/* Container only for img */}
-                <div className='not-md:w-[332px] not-md:h-[332px] flex justify-center items-center not-md:w-332px not-md:h-332px relative '>
-                  <img
-                    className={` absolute ${item.id % 2 === 0 ? '[animation-direction:reverse]' : ''}`}
-                    style={{ animationDuration: '100s' }}
-                    src='/assets/images/circle_layer2.png'
-                    alt=''
-                  />
-                  <img
-                    className={` ${item.id % 2 !== 0 ? '[animation-direction:reverse]' : ''}   `}
-                    style={{ animationDuration: '100s' }}
-                    src='/assets/images/circle_layer1.png'
-                    alt=''
-                  />
-                </div>
-                {/* The price name is in the middle of the circle card */}
-                <h2 className='text-white text-4xl absolute not-md:text-[20px] w-[280px] text-center '>
-                  {translations[item.name]}
-                </h2>
-              </div>
-              <div className='flex flex-col gap-8 h-full justify-center not-md:text-[20px]'>
-                <h3 className='text-white text-2xl ${pacifico.className}'>
-                  {translations[item.title]}
-                </h3>
-                {/* Price number */}
-                <div className='w-[192px] h-[32px] border border-[#A93CFF] py-[4px] px-2 rounded-lg  flex justify-center items-center shadow-[-2px_0_8px_0_rgb(169,60,255,0.1),2px_0_8px_0_rgb(169,60,255,0.1),0_-2px_8px_0_rgb(169,60,255,0.1),0_2px_8px_0_rgb(169,60,255,0.1)]'>
-                  <p className='${merriweather.className} text-white text-center flex not-md:text-[16px] '>
-                    <img className='w-6 h-6 mr-2.5' src={coins} alt='' />{' '}
-                    {translations['from']} {item.price} {translations['uah']}
-                  </p>
-                </div>
-                {/* Description price list */}
-                <div className='flex flex-col gap-2 ${merriweather.className} not-md:text-[16px]'>
-                  {item.features.map((feature, index) => (
-                    <div key={index}>
-                      <div className='flex items-center gap-2'>
-                        <img src={cursor} alt='' className='w-6 h-6' />
-                        <p className='text-white'>{translations[feature]}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {/* Button for buy packet */}
-                <div>
-                  <button className='flex text-[#FFA157] gap-1 justify-center items-center text-[16px] ${merriweather.className}'>
-                    {translations[item.buttonText]} <img src={buy} alt='' />
-                  </button>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
+    <p className="text-white text-sm md:text-base md:w-[700px] lg:w-[760px] text-center mb-12">
+      {translations['prices_and_services_text']}
+    </p>
+
+    {/* Cards */}
+    <div className="flex flex-col gap-16 w-full max-w-[1296px]">
+      {priceData.map((item) => (
+        <div
+          key={item.id}
+          className={`
+            flex flex-col lg:flex-row
+            ${item.id % 2 === 0 ? 'lg:flex-row-reverse' : ''}
+            items-center gap-8
+          `}
+        >
+          {/* Circle */}
+          <div className="relative flex justify-center items-center w-[300px] h-[300px] md:w-[332px] md:h-[332px] lg:w-[636px] lg:h-[636px]">
+            <img
+              className={`absolute w-full h-full ${
+                item.id % 2 === 0 ? '[animation-direction:reverse]' : ''
+              }`}
+              style={{ animationDuration: '100s' }}
+              src="/assets/images/circle_layer2.png"
+              alt=""
+            />
+            <img
+              className={`absolute w-full h-full ${
+                item.id % 2 !== 0 ? '[animation-direction:reverse]' : ''
+              }`}
+              style={{ animationDuration: '100s' }}
+              src="/assets/images/circle_layer1.png"
+              alt=""
+            />
+
+            <h2 className="absolute text-white text-lg md:text-xl lg:text-4xl text-center w-[200px] md:w-[240px]">
+              {translations[item.name]}
+            </h2>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 flex justify-start">
+  <div className="flex flex-col gap-6 text-center lg:text-left max-w-[520px]">
+    <h3 className="text-white text-xl lg:text-2xl text-left">
+      {translations[item.title]}
+    </h3>
+
+    <div className="w-fit border border-[#A93CFF] py-1 px-3 rounded-lg flex items-center gap-2 shadow-[0_0_8px_rgba(169,60,255,0.3)]">
+      <img className="w-5 h-5" src={coins} alt="" />
+      <p className="text-white text-sm">
+        {translations['from']} {item.price} {translations['uah']}
+      </p>
     </div>
-  )
+
+    <div className="flex flex-col gap-2 text-left">
+      {item.features.map((feature, index) => (
+        <div key={index} className="flex items-center gap-2">
+          <img src={cursor} alt="" className="w-5 h-5" />
+          <p className="text-white text-sm">
+            {translations[feature]}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <button className="flex gap-1 justify-center lg:justify-start items-center text-[#FFA157] text-sm mx-auto lg:mx-0">
+      {translations[item.buttonText]}
+      <img src={buy} alt="" />
+    </button>
+  </div>
+</div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+)
+
 }
 
 export default Price;
