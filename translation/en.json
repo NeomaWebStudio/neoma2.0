@@ -80,5 +80,10 @@
   "form_phone": "Phone number",
   "form_email": "E-mail",
   "form_text": "Briefly describe your request",
-  "form_submit_btn": "Briefly describe your request"
+  "form_submit_btn": "Briefly describe your request",
+  "slide_descriptions1": "Development of a one-page website for a luxury watch brand. A stylish landing page was created that emphasizes the premium nature of the product and creates a sense of the value of time.",
+  "slide_descriptions2": "Design and launch of a platform for booking eco-tours. An interactive map, a personal user account, and an online payment system were implemented.",
+  "slide_descriptions3": "Creating an online library with adaptive search and recommendations. Special attention was paid to ease of navigation and modern UI.",
+  "slide_descriptions4": "Development of a mobile fitness application with personal training, progress tracking, and integration with smartwatches.",
+  "slide_descriptions5": "Virtual gallery of contemporary art with a 3D tour, the ability to purchase works, and the integration of video tours."
 }

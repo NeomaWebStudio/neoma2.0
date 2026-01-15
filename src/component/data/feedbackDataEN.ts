@@ -17,26 +17,18 @@ export const feedbackDataEN = [
     },
     {
         id: 3,
-        author: 'Андрій Іванов',
-        feedbackText: 'Дщіл діоат аомлтаот тдолтдолтдо лтдоалто длоатдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтдо лтдоалтд',
+        author: 'Andriy Ivanov',
+        feedbackText: 'We ordered a website, it was done very well. Everything is clear! Thank you to the Neoma team for the professional approach and high-quality work. We recommend it to everyone who is looking for a reliable partner to create a website.',
         authorImg: '../../assets/images/feedback-person-img2.png',
-        subTitle: 'управляючий партнер',
+        subTitle: 'Managing partner',
         image: '../../assets/images/feedback-img.png'
     },
     {
         id: 4,
-        author: 'Ігор Петренко',
-        feedbackText: 'щіц 3щщ3ц щ 3 іьфжьфд ль латцудаиукраикр. іждь луу дль. щащш ащлажщфк щокщ.   фщащаж дажщО ПЖЩШК Ж ЖЩЦОПЦЖЩ КПЖЛКТП ЖЛКЖФЩШКПЖЩКО',
+        author: 'Igor Petrenko',
+        feedbackText: 'Well done! They do a great job. I recommend them! The prices are also nice. We ordered website development for our company, everything was done quickly and efficiently. I especially liked the support after the site was launched.',
         authorImg: '../../assets/images/feedback-person-img2.png',
-        subTitle: 'лідер проєкту',
-        image: '../../assets/images/feedback-img.png'
-    },
-    {
-        id: 5,
-        author: 'леонардо да Вінчі',
-        feedbackText: 'Мистецтво є королівським шляхом до наукового пізнання. Neoma створили для нас сайт, який поєднує в собі естетику і функціональність, що дозволяє нашим клієнтам легко знаходити потрібну інформацію та насолоджуватися візуальним досвідом.',
-        authorImg: '../../assets/images/feedback-person-img2.png',
-        subTitle: 'геній епохи Відродження',
+        subTitle: 'Project leader',
         image: '../../assets/images/feedback-img.png'
     },
 

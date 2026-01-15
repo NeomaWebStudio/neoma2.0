@@ -17,31 +17,31 @@ export const SlideDescriptions = [
         id: uuidv4(),
         src: '/assets/images/random-img-6.jpg',
         title: "TimeCrafters",
-        text: "Розробка односторінкового сайту для бренду елітних годинників. Створено стильний лендінг, який підкреслює преміальність продукту та формує відчуття цінності часу."
+        text: "slide_descriptions1"
     },
     {
         id: uuidv4(),
         src: '/assets/images/random-img-7.jpg',
         title: "EcoTravel",
-        text: "Дизайн і запуск платформи для бронювання екологічних турів. Реалізовано інтерактивну карту, особистий кабінет користувача та систему онлайн-оплати."
+        text: "slide_descriptions2"
     },
     {
         id: uuidv4(),
         src: '/assets/images/random-img-8.jpg',
         title: "BookNest",
-        text: "Створення онлайн-бібліотеки з адаптивним пошуком і рекомендаціями. Особливу увагу приділено зручності навігації та сучасному UI."
+        text: "slide_descriptions3"
     },
     {
         id: uuidv4(),
         src: '/assets/images/random-img-9.jpg',
         title: "FitLife App",
-        text: "Розробка мобільного додатку для фітнесу з персональними тренуваннями, трекінгом прогресу та інтеграцією з розумними годинниками."
+        text: "slide_descriptions4"
     },
     {
         id: uuidv4(),
         src: '/assets/images/random-img-10.jpg',
         title: "UrbanArt Gallery",
-        text: "Віртуальна галерея сучасного мистецтва з 3D-туром, можливістю купівлі робіт та інтеграцією відеоекскурсій."
+        text: "slide_descriptions5"
     }
 ];
 
@@ -106,7 +106,7 @@ const OurProjects = ({ translations }: TranslationProps) => {
                             {SlideDescriptions[selectedIndex].title}
                         </h2>
                         <p className="text-base font-merriweather">
-                            {SlideDescriptions[selectedIndex].text}
+                            {translations[SlideDescriptions[selectedIndex].text]}
                         </p>
                     </div>
 
