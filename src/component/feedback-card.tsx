@@ -44,4 +44,5 @@ const FeedbackCard = ({ author, subTitle, feedbackText, image, authorImg }: Feed
     </div>
   )
 }
+
 export default FeedbackCard

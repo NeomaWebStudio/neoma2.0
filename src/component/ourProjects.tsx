@@ -86,7 +86,7 @@ const OurProjects = ({ translations }: TranslationProps) => {
             </h1>
 
             {/* Мобільна версія */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
                 <EmblaCarouselOurProjectsMobile
                     slides={Slides}
                     options={OPTIONS}
@@ -94,10 +94,11 @@ const OurProjects = ({ translations }: TranslationProps) => {
             </div>
 
             {/* Десктопна версія */}
-            <div className="flex z-30 items-center">
+            {/* <div className="flex z-30 items-center"> */}
                 {/* Ліва частина з текстом і слайдером */}
-                <div className="hidden xl:flex xl:flex-col xl:flex-[50%]">
-                    <div
+                {/* <div className="hidden lg:block xl:flex-col xl:flex-[50%]"> */}
+                {/* <div className="hidden lg:block"> */}
+                    {/* <div
                         className={`text-white transition-opacity ${fade ? 'opacity-0' : 'opacity-100'
                             } duration-300 min-h-50 xl:block`}
                         style={{ transitionProperty: 'opacity' }}
@@ -108,30 +109,29 @@ const OurProjects = ({ translations }: TranslationProps) => {
                         <p className="text-base font-merriweather">
                             {translations[SlideDescriptions[selectedIndex].text]}
                         </p>
-                    </div>
+                    </div> */}
 
-                    <div className="mt-4">
+                    <div className="hidden mt-4 lg:block">
                         <EmblaCarousel
                             triggerAnimation={triggerAnimation}
                             onSlideChange={onSlideChange}
                         />
                     </div>
-                </div>
+                {/* </div> */}
 
                 {/* Права частина зі Spline */}
-                <div
-  className="hidden md:!flex md:flex-[50%] justify-center items-center"
-  onWheelCapture={(e) => {
-    e.stopPropagation();
-  }}
->
-  <Spline
-    scene="/tablet_new.splinecode"
-    onLoad={(app) => (splineRef.current = app)}
-  />
-</div>
+                {/* <div className="hidden xl:flex xl:flex-[50%] justify-center items-center"
+                    onWheelCapture={(e) => {
+                        e.stopPropagation();
+                    }}
+                >
+                    <Spline
+                        scene="/tablet_new.splinecode"
+                        onLoad={(app) => (splineRef.current = app)}
+                    />
+                </div> */}
 
-            </div>
+            {/* </div> */}
         </section>
 
     );

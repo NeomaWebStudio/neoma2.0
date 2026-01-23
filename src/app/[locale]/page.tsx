@@ -9,6 +9,7 @@ import FeedbackForm from '@/component/feedbackForm';
 import path from 'path';
 import fs from 'fs/promises';
 import Footer from '@/component/footer';
+import FeedbackCardMock from '@/component/feedback-card-mock';
 // Додаємо тип для params
 interface PageProps {
   params: {
@@ -31,14 +32,14 @@ export default async function Home({ params }: PageProps) {
   return (
     <div>
       <main className="min-h-screen max-w-[1440px] px-[18px] xs:px-[30px] md:px-18 mx-auto">
-        <Header translations={translations} />
+        {/* <Header translations={translations} />
         <ExperienceInfo translations={translations} />
         <About translations={translations} />
-        <Price translations={translations} locale={locale} />
+        <Price translations={translations} locale={locale} /> */}
         <OurProjects translations={translations} />
         <FeedbackSection translations={translations} locale={locale} />
-        <Faq translations={translations} />
-        <FeedbackForm translations={translations} />
+        {/* <Faq translations={translations} />
+        <FeedbackForm translations={translations} /> */}
       </main>
       <Footer translations={translations} />
     </div>
