@@ -11,6 +11,7 @@ import {
     usePrevNextButtons
 } from './EmblaCarouselArrowButtons'
 import { SlideDescriptions } from '../ourProjects'
+import PortfolioCardMock from '../portfolio-card-mock'
 
 type PropType = {
     slides: number[]
@@ -46,9 +47,13 @@ const EmblaCarouselOurProjectsMobile: React.FC<PropType> = ({ slides, options })
     return (
         <div className="embla w-full">
             <div className="embla__viewport w-full" ref={emblaRef}>
-                <div className="embla__container w-full">
+                <PortfolioCardMock author="" subTitle="" feedbackText="" />
+
+                {/* <div className="embla__container w-full">
                     {slides.map((index) => (
+
                         <div className="embla__slide w-full" key={index}>
+
                             <div
                                 className="embla__slide__img w-full h-[600px] bg-cover bg-center bg-no-repeat"
                                 style={{
@@ -60,7 +65,7 @@ const EmblaCarouselOurProjectsMobile: React.FC<PropType> = ({ slides, options })
                             />
                         </div>
                     ))}
-                </div>
+                </div> */}
             </div>
 
             {/* ✅ Блок керування як у робочому варіанті */}
@@ -72,14 +77,14 @@ const EmblaCarouselOurProjectsMobile: React.FC<PropType> = ({ slides, options })
             </div>
 
             {/* ✅ Текстовий блок */}
-            <div className="mt-6 min-h-40 text-white text-center px-4">
+            {/* <div className="mt-6 min-h-40 text-white text-center px-4">
                 <h2 className="mb-4 font-nunito text-2xl">
                     {SlideDescriptions[currentSlide]?.title}
                 </h2>
                 <p className="text-base font-merriweather">
                     {SlideDescriptions[currentSlide]?.text}
                 </p>
-            </div>
+            </div> */}
         </div>
     )
 }

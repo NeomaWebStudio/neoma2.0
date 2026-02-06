@@ -16,6 +16,8 @@ import { DotButton, useDotButton } from '@/component/EmblaCarousel/EmblaCarousel
 import useEmblaCarousel from 'embla-carousel-react';
 import FeedbackCard from '../feedback-card';
 import EmblaCarouselCard from './EmblaCarouselCard';
+import FeedbackCardMock from '../feedback-card-mock';
+import PortfolioCardMock from '../portfolio-card-mock';
 
 const TWEEN_FACTOR_BASE = 0.52
 
@@ -130,7 +132,7 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
                     const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
                     const scale = numberWithinRange(tweenValue, 0, 1).toString()
                     const tweenNode = tweenNodes.current[slideIndex]
-                    tweenNode.style.transform = `scale(${scale})`
+                    // tweenNode.style.transform = `scale(${scale})`
                 })
             })
         },
@@ -185,18 +187,19 @@ const EmblaCarousel: React.FC<PropType> = ({ triggerAnimation, onSlideChange }) 
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {Slides.map((index) => (
-                        <div className="embla__slide" key={index}>
-                            <div>
-                                <Image
-                                    width={800}
-                                    height={600}
-                                    alt={`Slide ${index + 1}`}
-                                    className="embla__slide__img"
-                                    src={SlideImages[index].src}
-                                    priority
-                                />
-                            </div>
-                        </div>
+                        <PortfolioCardMock author="" subTitle="" feedbackText="" key={index} />
+                        
+                        //     <div>
+                        //         <Image
+                        //             width={800}
+                        //             height={600}
+                        //             alt={`Slide ${index + 1}`}
+                        //             className="embla__slide__img"
+                        //             src={SlideImages[index].src}
+                        //             priority
+                        //         />
+                        //     </div>
+                        // </div>
                     ))}
                 </div>
             </div>

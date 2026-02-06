@@ -8,6 +8,7 @@ import {
 } from './EmblaCarouselArrowButtons'
 import useEmblaCarousel from 'embla-carousel-react'
 import FeedbackCard, { FeedbackCardProps } from '../feedback-card'
+import FeedbackCardMock from '../feedback-card-mock'
 
 type PropType = {
     slides: FeedbackCardProps[]
@@ -30,7 +31,9 @@ const EmblaCarouselFeedback: React.FC<PropType> = (props) => {
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container-feedback">
                     {slides.map((slide, index) => (
-                        <FeedbackCard {...slide} key={index} />
+                        // <FeedbackCard {...slide} key={index} />
+                        <FeedbackCardMock {...slide} key={index} />
+
                     ))}
                 </div>
             </div>
