@@ -6,6 +6,7 @@ import AnimatedWaves from '@/component/animatedWaves'
 import AOSInit from '@/component/aos-init'
 import 'aos/dist/aos.css'
 import localFont from 'next/font/local'
+import { BackgroundGradient } from '@/component/background-gradient';
 
 const kurale = Kurale({
   subsets: ['latin', 'cyrillic'],
@@ -47,7 +48,8 @@ export default function RootLayout({
         {' '}
         {/* ${kurale.className} ${geistMono.variable} ${nunito.className} ${merriweather.className} */}
         <AOSInit />
-        <NeatGradientComp />
+        {/* <NeatGradientComp /> */}
+        <BackgroundGradient />
         {/* <AnimatedWaves /> */}
         {children}
       </body>
