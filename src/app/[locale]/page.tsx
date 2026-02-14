@@ -30,8 +30,8 @@ export default async function Home({ params }: PageProps) {
     console.error(`Файл перекладів для локалі "${locale}" не знайдено.`);
   }
   return (
-    <div>
-      <main className='min-h-screen max-w-[1440px] px-[18px] xs:px-[30px] md:px-18 mx-auto'>
+    <div className='h-[100vh]'>
+      <main className='max-w-[1440px] px-[18px] xs:px-[30px] md:px-18 mx-auto'>
         <Header translations={translations} />
         <ExperienceInfo translations={translations} />
         <About translations={translations} />
