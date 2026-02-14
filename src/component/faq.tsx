@@ -59,14 +59,14 @@ export default function Faq({ translations }: TranslationProps) {
       <h3 className="text-center text-[28px] md:text-5xl text-white font-nanito mb-12">Faq</h3>
       <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
         <div
-          className="w-full touch-pan-y"
+          className="mt-[40px] md:mt-[150px] w-full min-h-[300px] h-[300px] md:h-[500px] relative"
           onWheelCapture={(e) => {
-            e.stopPropagation();   // дає сторінці нормальний скрол
+            e.stopPropagation();
           }}
         >
           <Spline
             scene="/sphere.splinecode"
-            className="flex justify-center items-center"
+            className="flex justify-center items-center w-full h-full"
           />
         </div>
 

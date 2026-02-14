@@ -6,6 +6,7 @@ import AnimatedWaves from '@/component/animatedWaves'
 import AOSInit from '@/component/aos-init'
 import 'aos/dist/aos.css'
 import localFont from 'next/font/local'
+import { BackgroundGradient } from '@/component/background-gradient';
 
 const kurale = Kurale({
   subsets: ['latin', 'cyrillic'],
@@ -33,7 +34,7 @@ const merriweatherRegular = localFont({
 export const metadata: Metadata = {
   title: 'Neoma WebStudio',
   description:
-    'Neoma WebStudio	- ваш надійний партнер у світі цифрових рішень. Ми спеціалізуємося на створенні інноваційних веб-сайтів, мобільних додатків та комплексних цифрових стратегій, які допомагають бізнесам зростати та досягати нових висот. Наша команда експертів поєднує креативність, технології та досвід, щоб забезпечити найкращі результати для наших клієнтів. Долучайтеся до нас і відкрийте нові можливості для вашого бізнесу в цифровому світі.',
+    'Neoma WebStudio - ваш надійний партнер у світі цифрових рішень. Ми спеціалізуємося на створенні інноваційних веб-сайтів, мобільних додатків та комплексних цифрових стратегій, які допомагають бізнесам зростати та досягати нових висот. Наша команда експертів поєднує креативність, технології та досвід, щоб забезпечити найкращі результати для наших клієнтів. Долучайтеся до нас і відкрийте нові можливості для вашого бізнесу в цифровому світі.',
 }
 
 export default function RootLayout({
@@ -47,7 +48,8 @@ export default function RootLayout({
         {' '}
         {/* ${kurale.className} ${geistMono.variable} ${nunito.className} ${merriweather.className} */}
         <AOSInit />
-        <NeatGradientComp />
+        {/* <NeatGradientComp /> */}
+        <BackgroundGradient />
         {/* <AnimatedWaves /> */}
         {children}
       </body>
