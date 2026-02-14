@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from 'next/image';
-const logo = '/logo.svg'
+const logo = '/Logo.svg'
 
 import MenuItemsList from './MenuItemsList'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -83,7 +83,7 @@ const Nav = ({ translations }: TranslationProps) => {
         <div className='flex flex-col h-full'>
           {/* Menu Header */}
           <div className='flex items-center justify-between p-6 border-b border-gray-700'>
-            <img src='/logo.svg' alt='Логотип' className='h-12 w-12' />
+            <img src='/Logo.svg' alt='Логотип' className='h-12 w-12' />
             <button
               onClick={closeMenu}
               className='text-white text-2xl hover:text-gray-300'
