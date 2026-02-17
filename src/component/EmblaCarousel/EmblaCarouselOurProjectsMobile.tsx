@@ -20,11 +20,11 @@ type PropType = {
 
 const EmblaCarouselOurProjectsMobile: React.FC<PropType> = ({ slides, options }) => {
     const ourProjectsSlides = [
-        'Frame 334.png',
-        'https://picsum.photos/600/950?v=1',
-        'https://picsum.photos/600/950?v=2',
-        'https://picsum.photos/600/950?v=3',
-        'https://picsum.photos/600/950?v=4'
+      'Frame 334.svg',
+      'https://picsum.photos/600/950?v=1',
+      'https://picsum.photos/600/950?v=2',
+      'https://picsum.photos/600/950?v=3',
+      'https://picsum.photos/600/950?v=4',
     ]
 
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade()])

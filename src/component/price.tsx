@@ -44,22 +44,51 @@ const Price = ({ translations, locale }: TranslationProps) => {
           >
             {/* Circle */}
             <div className='relative flex justify-center items-center w-[300px] h-[300px] md:w-[332px] md:h-[332px] lg:w-[636px] lg:h-[636px]'>
-              <img
-                className={` animate-spin absolute w-full h-full ${
+              {/* Layer 2 */}
+              <picture
+                className={`absolute w-full h-full ${
                   item.id % 2 === 0 ? '[animation-direction:reverse]' : ''
-                }`}
+                } animate-spin`}
                 style={{ animationDuration: '100s' }}
-                src='/assets/images/circle_layer2.png'
-                alt=''
-              />
-              <img
-                className={`animate-spin absolute w-full h-full ${
+              >
+                <source
+                  srcSet='
+        /assets/images/circle_layer2_300.webp 300w,
+        /assets/images/circle_layer2_332.webp 332w,
+        /assets/images/circle_layer2_636.webp 636w
+      '
+                  type='image/webp'
+                />
+                <img
+                  loading='lazy'
+                  className='w-full h-full'
+                  src='/assets/images/circle_layer2_636.webp'
+                  alt=''
+                />
+              </picture>
+
+              {/* Layer 1 */}
+              <picture
+                className={`absolute w-full h-full ${
                   item.id % 2 !== 0 ? '[animation-direction:reverse]' : ''
-                }`}
+                } animate-spin`}
                 style={{ animationDuration: '100s' }}
-                src='/assets/images/circle_layer1.png'
-                alt=''
-              />
+              >
+                <source
+                  srcSet='
+        /assets/images/circle_layer1_300.webp 300w,
+        /assets/images/circle_layer1_332.webp 332w,
+        /assets/images/circle_layer1_636.webp 636w
+      '
+                  type='image/webp'
+                />
+                <img
+                  loading='lazy'
+                  className='w-full h-full'
+                  src='/assets/images/circle_layer1_636.webp'
+                  alt=''
+                />
+              </picture>
 
               <h2 className='absolute text-white text-lg md:text-xl lg:text-4xl text-center w-[200px] md:w-[240px]'>
                 {translations[item.name]}
