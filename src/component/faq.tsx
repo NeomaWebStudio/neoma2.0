@@ -62,7 +62,7 @@ export default function Faq({ translations }: TranslationProps) {
       <div className='flex flex-col lg:flex-row lg:justify-between gap-12'>
         <div
 <<<<<<< Updated upstream
-          className="mt-[40px] md:mt-[150px] w-full min-h-[300px] h-[300px] md:h-[500px] relative"
+          className="w-full touch-pan-y"
 =======
           className='w-full touch-pan-y'
 >>>>>>> Stashed changes
