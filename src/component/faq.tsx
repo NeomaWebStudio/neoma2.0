@@ -61,11 +61,7 @@ export default function Faq({ translations }: TranslationProps) {
       </h3>
       <div className='flex flex-col lg:flex-row lg:justify-between gap-12'>
         <div
-<<<<<<< Updated upstream
-          className="w-full touch-pan-y"
-=======
           className='w-full touch-pan-y'
->>>>>>> Stashed changes
           onWheelCapture={(e) => {
             e.stopPropagation() // дає сторінці нормальний скрол
           }}

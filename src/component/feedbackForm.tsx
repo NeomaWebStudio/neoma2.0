@@ -8,6 +8,22 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
+
+	async function sendOrderEmail() {
+		await fetch("api/order", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				name,
+				phone,
+				email,
+			}),
+		})
+	}
+
+
 	return (
 		<div id='contact' className='w-full text-white mb-24'>
 			<h2 className='font-nunito text-[28px] md:text-5xl text-white text-center mb-12'>{translations['contacts']}</h2>
@@ -255,6 +271,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 						active:translate-y-[1px]
 						transition-all duration-150
 						"
+						onClick={sendOrderEmail}
 					>
 						{translations["form_submit_btn"]}
 					</button>
