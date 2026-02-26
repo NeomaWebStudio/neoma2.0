@@ -15,9 +15,9 @@ export default function Faq({ translations }: TranslationProps) {
         list: [
           translations["faq_a11"],
           translations["faq_a12"],
-          translations["faq_a13"]
-        ]
-      }
+          translations["faq_a13"],
+        ],
+      },
     },
     {
       q: translations["faq_q2"],
@@ -25,8 +25,8 @@ export default function Faq({ translations }: TranslationProps) {
         translations["faq_a21"],
         translations["faq_a22"],
         translations["faq_a23"],
-        translations["faq_a24"]
-      ]
+        translations["faq_a24"],
+      ],
     },
     {
       q: translations["faq_q3"],
@@ -36,16 +36,16 @@ export default function Faq({ translations }: TranslationProps) {
           translations["faq_a31"],
           translations["faq_a32"],
           translations["faq_a33"],
-          translations["faq_a34"]
-        ]
-      }
+          translations["faq_a34"],
+        ],
+      },
     },
     { q: translations["faq_q4"], a: translations["faq_a4"] },
     { q: translations["faq_q5"], a: translations["faq_a5"] },
     { q: translations["faq_q6"], a: translations["faq_a6"] },
     { q: translations["faq_q7"], a: translations["faq_a7"] },
     { q: translations["faq_q8"], a: translations["faq_a8"] },
-    { q: translations["faq_q9"], a: translations["faq_a9"] }
+    { q: translations["faq_q9"], a: translations["faq_a9"] },
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -55,16 +55,12 @@ export default function Faq({ translations }: TranslationProps) {
   };
 
   return (
-    <div id='faq' className='mb-24'>
-      <h3 className='text-center text-[28px] md:text-5xl text-white font-nanito mb-12'>
-        Faq
-      </h3>
-      <div className='flex flex-col lg:flex-row lg:justify-between gap-12'>
+    <div id="faq" className="mb-24">
+      <h3 className="text-center text-[28px] md:text-5xl text-white font-nanito mb-12">Faq</h3>
+      <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
         <div
-          className='w-full touch-pan-y'
-          onWheelCapture={(e) => {
-            e.stopPropagation() // дає сторінці нормальний скрол
-          }}
+          className="w-full touch-pan-y"
+          onWheelCapture={(e) => e.stopPropagation()}
         >
           <Spline
             scene='/sphere.splinecode'
@@ -79,34 +75,33 @@ export default function Faq({ translations }: TranslationProps) {
           {items.map((it, idx) => (
             <details
               key={idx}
-              open={openIndex === idx}
-              className='text-[20px] h-auto md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl 
-  shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)] 
-  transition-all duration-300 ease-in-out 
-  w-full max-w-[600px] break-words overflow-x-hidden'
+              open // always open so children stay in DOM and CSS transition works
+              className="text-[20px] md:text-[24px] border border-[#A93CFF] bg-[#0A081A] p-4 rounded-2xl cursor-pointer 
+                shadow-[inset_4px_4px_16px_0px_RGBA(255,255,255,0.05),inset_4px_4px_8px_0px_RGBA(217,77,180,0.1),inset_-4px_-4px_8px_0px_RGBA(0,0,0,0.4),4px_4px_8px_0px_RGBA(0,0,0,0.25)]
+                w-full max-w-[600px] break-words overflow-x-hidden"
+              onClick={(e) => {
+                e.preventDefault();
+                toggle(idx);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggle(idx);
+                }
+              }}
             >
-              <summary
-                className='list-none cursor-pointer select-none'
-                onClick={(e) => {
-                  e.preventDefault()
-                  toggle(idx)
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    toggle(idx)
-                  }
-                }}
-              >
+              <summary className="list-none select-none">
                 {it.q}
               </summary>
 
               <div
-                className={`text-[16px] mt-4 overflow-hidden transition-all duration-300 ease-in-out break-words whitespace-normal overflow-x-hidden ${
-                  openIndex === idx
-                    ? 'max-h-[500px] opacity-100'
-                    : 'max-h-0 opacity-0'
-                }`}
+                className="text-[16px] overflow-hidden break-words whitespace-normal overflow-x-hidden"
+                style={{
+                  maxHeight: openIndex === idx ? "500px" : "0px",
+                  opacity: openIndex === idx ? 1 : 0,
+                  marginTop: openIndex === idx ? "1rem" : "0",
+                  transition: "max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease",
+                }}
               >
                 {typeof it.a === 'object' && !Array.isArray(it.a) ? (
                   <div>
