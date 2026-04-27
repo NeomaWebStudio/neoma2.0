@@ -28,13 +28,22 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
     }
     setErrors({})
 
-    const req = await fetch('api/telegramApi', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(message),
-    })
+    const [resTelegram, resEmail] = await Promise.all([
+      await fetch('api/telegramApi', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(message),
+      }),
+      await fetch('api/emailApi', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(message),
+      }),
+    ]);
   }
 
   return (
