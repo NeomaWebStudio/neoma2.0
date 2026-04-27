@@ -8,6 +8,24 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
+	const [description, setDescription] = useState("");
+
+	const handleSubmit = async () => {
+		const message = {
+			name,
+			phone,
+			email,
+			description
+		}
+		const req = await fetch("api/telegramApi", {
+			method: "POST",
+			headers: {
+				"Conntent-Type": "application/json"
+			},
+			body: JSON.stringify(message)
+		})
+	}
+
 	return (
 		<div id='contact' className='w-full text-white mb-24'>
 			<h2 className='font-nunito text-[28px] md:text-5xl text-white text-center mb-12'>{translations['contacts']}</h2>
@@ -210,7 +228,7 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 							<input
 								type="email"
 								placeholder={translations["form_email"]}
-
+								value={email}
 								onChange={(e) => setEmail(e.target.value)}
 								className="bg-transparent w-full outline-none text-[16px]
     				                 placeholder:text-white hover:placeholder:text-[#FFC08F]
@@ -231,19 +249,26 @@ const FeedbackForm = ({ translations }: TranslationProps) => {
 							hover:border-[#FFC08F]
 							focus-within:[&>svg]:text-[#FFC08F]
 					      hover:[&>svg]:text-[#FFC08F] transition-all duration-300 rounded-3xl">
-							<textarea name="" id="" placeholder={translations["form_text"]} className='resize-none w-full h-[120px] 
-								text-[16px] bg-transparent outline-none 
-					                      placeholder:text-white hover:placeholder:text-[#FFC08F]
-										  hover:text-[#FFC08F]
-										  text-orange-400
-										  focus:text-white
-					                      focus:placeholder:text-white transition-colors duration-300
-										'></textarea>
+							<textarea 
+								name="" 
+								id="" 
+								placeholder={translations["form_text"]} 
+								value={description}
+								onChange={(e) => setDescription(e.target.value)}
+								className='resize-none w-full h-[120px]
+									text-[16px] bg-transparent outline-none 
+						              placeholder:text-white hover:placeholder:text-[#FFC08F]
+											  hover:text-[#FFC08F]
+											  text-orange-400
+											  focus:text-white
+					                      focus:placeholder:text-white transition-colors duration-300'
+										></textarea>
 						</div>
 					</div>
 
 					<button
 						type="button"
+						onClick={() => handleSubmit()}
 						className="
 						bg-gradient-to-b from-[#FFC08F] to-[#FF9F50]
 						hover:from-[#FFE6C9] hover:to-[#FFB789]
