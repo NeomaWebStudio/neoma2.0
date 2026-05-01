@@ -56,7 +56,7 @@ const Nav = ({ translations }: TranslationProps) => {
 
         <div className='ml-auto xs:ml-0 xs:mr-auto xs:order-1 2xl:order-none 2xl:hidden'>
           <Image
-            src={'/menu.svg'}
+            src={'/menu.png'}
             width={24}
             height={24}
             alt='menu-icon'
